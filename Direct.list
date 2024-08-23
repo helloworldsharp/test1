@@ -1,6 +1,11 @@
 # 直连补充列表(国内域名不解析时，防止走代理使用)
-
 # MyList
+DOMAIN-SUFFIX,backup.unraid.net
+DOMAIN-SUFFIX,bing.com
+DOMAIN-SUFFIX,steamserver.net
+DOMAIN-SUFFIX,steamstatic.com
+
+
 # 域名后缀匹配
 DOMAIN-SUFFIX,time.windows.com
 DOMAIN-SUFFIX,lanzov.com
@@ -23,7 +28,6 @@ IP-CIDR,223.6.6.6/32,no-resolve
 IP-CIDR,180.76.76.76/32,no-resolve
 IP-CIDR,114.114.114.114/32,no-resolve
 IP-CIDR,114.114.115.115/32,no-resolve
-
 
 # 360
 DOMAIN-SUFFIX,360.com
