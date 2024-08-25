@@ -1,7 +1,6 @@
 # 直连补充列表(国内域名不解析时，防止走代理使用)
 # MyList
 DOMAIN-SUFFIX,backup.unraid.net
-DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,steamserver.net
 DOMAIN-SUFFIX,steamstatic.com
 
