@@ -2,7 +2,6 @@
 # MyList
 DOMAIN-SUFFIX,backup.unraid.net
 SRC-IP-CIDR,192.168.50.222/32,no-resolve
-123321
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,time.windows.com
