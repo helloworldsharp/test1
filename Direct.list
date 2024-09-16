@@ -3,6 +3,9 @@
 DOMAIN-SUFFIX,backup.unraid.net
 SRC-IP-CIDR,192.168.50.222/32,no-resolve
 
+# epic下载cdn
+DOMAIN-SUFFIX,fastly-edge.com
+
 # 域名后缀匹配
 DOMAIN-SUFFIX,time.windows.com
 DOMAIN-SUFFIX,lanzov.com
