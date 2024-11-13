@@ -1,7 +1,7 @@
-# 直连补充列表(国内域名不解析时，防止走代理使用)
+# 直连补充列表
 # MyList
 DOMAIN-SUFFIX,backup.unraid.net
-
+DOMAIN-SUFFIX,asus.com
 
 # epic下载cdn
 DOMAIN-SUFFIX,fastly-edge.com
