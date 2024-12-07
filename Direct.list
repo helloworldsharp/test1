@@ -2,6 +2,7 @@
 # MyList
 DOMAIN-SUFFIX,backup.unraid.net
 DOMAIN-SUFFIX,asus.com
+DOMAIN-SUFFIX,nvidia.com
 
 # epic下载cdn
 DOMAIN-SUFFIX,fastly-edge.com
