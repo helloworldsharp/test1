@@ -1,36 +1,36 @@
-  # TWS / IB Gateway 核心连接、行情、交易通道
-  - DOMAIN-SUFFIX,ibllc.com,PROXY
-  - DOMAIN-SUFFIX,ibllc.com.cn,PROXY
+# TWS / IB Gateway 核心连接、行情、交易通道
+DOMAIN-SUFFIX,ibllc.com,PROXY
+DOMAIN-SUFFIX,ibllc.com.cn,PROXY
 
-  # Client Portal API / OAuth API
-  - DOMAIN,api.ibkr.com,PROXY
+# Client Portal API / OAuth API
+DOMAIN,api.ibkr.com,PROXY
 
-  # 官方主站、账户管理、区域入口
-  - DOMAIN-SUFFIX,interactivebrokers.com,PROXY
-  - DOMAIN-SUFFIX,interactivebrokers.ca,PROXY
-  - DOMAIN-SUFFIX,interactivebrokers.co.in,PROXY
-  - DOMAIN-SUFFIX,interactivebrokers.co.jp,PROXY
-  - DOMAIN-SUFFIX,interactivebrokers.co.uk,PROXY
-  - DOMAIN-SUFFIX,interactivebrokers.com.au,PROXY
-  - DOMAIN-SUFFIX,interactivebrokers.com.hk,PROXY
-  - DOMAIN-SUFFIX,interactivebrokers.com.sg,PROXY
-  - DOMAIN-SUFFIX,interactivebrokers.eu,PROXY
-  - DOMAIN-SUFFIX,interactivebrokers.ie,PROXY
-  - DOMAIN-SUFFIX,interactivebrokers.com.cn,PROXY
+# 官方主站、账户管理、区域入口
+DOMAIN-SUFFIX,interactivebrokers.com,PROXY
+DOMAIN-SUFFIX,interactivebrokers.ca,PROXY
+DOMAIN-SUFFIX,interactivebrokers.co.in,PROXY
+DOMAIN-SUFFIX,interactivebrokers.co.jp,PROXY
+DOMAIN-SUFFIX,interactivebrokers.co.uk,PROXY
+DOMAIN-SUFFIX,interactivebrokers.com.au,PROXY
+DOMAIN-SUFFIX,interactivebrokers.com.hk,PROXY
+DOMAIN-SUFFIX,interactivebrokers.com.sg,PROXY
+DOMAIN-SUFFIX,interactivebrokers.eu,PROXY
+DOMAIN-SUFFIX,interactivebrokers.ie,PROXY
+DOMAIN-SUFFIX,interactivebrokers.com.cn,PROXY
 
-  # IBKR 短域名 / 区域域名
-  - DOMAIN-SUFFIX,ibkr.com,PROXY
-  - DOMAIN-SUFFIX,ibkr.ca,PROXY
-  - DOMAIN-SUFFIX,ibkr.co.in,PROXY
-  - DOMAIN-SUFFIX,ibkr.co.uk,PROXY
-  - DOMAIN-SUFFIX,ibkr.com.au,PROXY
-  - DOMAIN-SUFFIX,ibkr.com.hk,PROXY
-  - DOMAIN-SUFFIX,ibkr.com.sg,PROXY
-  - DOMAIN-SUFFIX,ibkr.eu,PROXY
-  - DOMAIN-SUFFIX,ibkr.ie,PROXY
-  - DOMAIN-SUFFIX,ibkr.hk,PROXY
-  - DOMAIN-SUFFIX,ibkr.info,PROXY
-  - DOMAIN-SUFFIX,ibkr.com.cn,PROXY
+# IBKR 短域名 / 区域域名
+DOMAIN-SUFFIX,ibkr.com,PROXY
+DOMAIN-SUFFIX,ibkr.ca,PROXY
+DOMAIN-SUFFIX,ibkr.co.in,PROXY
+DOMAIN-SUFFIX,ibkr.co.uk,PROXY
+DOMAIN-SUFFIX,ibkr.com.au,PROXY
+DOMAIN-SUFFIX,ibkr.com.hk,PROXY
+DOMAIN-SUFFIX,ibkr.com.sg,PROXY
+DOMAIN-SUFFIX,ibkr.eu,PROXY
+DOMAIN-SUFFIX,ibkr.ie,PROXY
+DOMAIN-SUFFIX,ibkr.hk,PROXY
+DOMAIN-SUFFIX,ibkr.info,PROXY
+DOMAIN-SUFFIX,ibkr.com.cn,PROXY
 
-  # 官方帮助 / 文档
-  - DOMAIN-SUFFIX,ibkrguides.com,PROXY
+# 官方帮助 / 文档
+DOMAIN-SUFFIX,ibkrguides.com,PROXY
