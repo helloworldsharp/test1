@@ -1,12 +1,11 @@
 rules:
   - RULE-SET,lan,🎯 全球直连
-  - RULE-SET,direct_custom,🎯 全球直连
   - RULE-SET,ad_allow,🎯 全球直连
+  - RULE-SET,apple_push,🍎 苹果推送
   - RULE-SET,ad_anti_ad,🛡 广告拦截
-  - RULE-SET,ad_acl4ssr_banad,🛡 广告拦截
+  - RULE-SET,direct_custom,🎯 全球直连
   - RULE-SET,src_alone,📱 指定设备
   - RULE-SET,proxy_custom,🚀 节点选择
-  - RULE-SET,apple_push,🍎 苹果推送
   - RULE-SET,ai_openai,🤖 AI
   - RULE-SET,ai_anthropic,🤖 AI
   - RULE-SET,github,👨🏿‍💻 GitHub

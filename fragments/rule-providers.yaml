@@ -62,15 +62,6 @@ rule-providers:
     path: ./rule_provider/ad_anti_ad.yaml
     url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
 
-  ad_acl4ssr_banad:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/ad_acl4ssr_banad.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
-
   ai_openai:
     type: http
     behavior: classical
