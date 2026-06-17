@@ -1,0 +1,150 @@
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    include-all: true
+    proxies:
+      - DIRECT
+
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 🛡 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+
+  - name: 📱 指定设备
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+      - DIRECT
+
+  - name: 🍀 Google
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🍎 苹果推送
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🤖 AI
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 👨🏿‍💻 GitHub
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🪙 BNQ
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🐦︎ XGORK
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 😄 Steam
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🎮 Xbox
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🎮 其他游戏平台
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+
+  - name: 📢 谷歌FCM
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: Ⓜ️ 微软Bing
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+
+  - name: Ⓜ️ 微软云盘
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🚀 节点选择
+
+  - name: 📲 电报消息
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 📹 油管视频
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🎥 奈飞视频
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🐟 漏网之鱼
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - DIRECT
