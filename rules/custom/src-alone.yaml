@@ -1,5 +1,5 @@
 payload:
-  # From aloneip2.list
+  # From aloneip2.list iPhone SE
   - 'SRC-IP-CIDR,192.168.50.174/32'
-  # From alonejp.list
+  # From alonejp.list Docker metatube-server
   - 'SRC-IP-CIDR,192.168.50.225/32'
