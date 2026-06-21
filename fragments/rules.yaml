@@ -22,7 +22,7 @@ rules:
   - RULE-SET,google_fcm,📢 谷歌FCM
   - RULE-SET,google,🍀 Google
   - RULE-SET,microsoft_bing,Ⓜ️ 微软Bing
-  - RULE-SET,microsoft_onedrive,Ⓜ️ 微软云盘
+  - RULE-SET,microsoft_onedrive,Ⓜ️ 微软服务
   - RULE-SET,microsoft,Ⓜ️ 微软服务
   - RULE-SET,apple,🍎 苹果服务
   - RULE-SET,telegram,📲 电报消息
