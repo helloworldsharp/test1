@@ -55,7 +55,7 @@ rule-providers:
 
   ad_anti_ad:
     type: http
-    behavior: classical
+    behavior: domain
     format: yaml
     interval: 86400
     proxy: 🚀 节点选择
