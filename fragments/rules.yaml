@@ -8,10 +8,10 @@ rules:
   - RULE-SET,proxy_custom,🚀 节点选择
   - RULE-SET,ai_openai,🤖 AI
   - RULE-SET,ai_anthropic,🤖 AI
-  - RULE-SET,github,👨🏿‍💻 GitHub
+  - RULE-SET,github,💻 GitHub
   - RULE-SET,binance,🪙 BNQ
   - RULE-SET,crypto,🪙 BNQ
-  - RULE-SET,twitter,🐦︎ XGORK
+  - RULE-SET,twitter,🐦 XGORK
   - RULE-SET,steam_cn,🎯 全球直连
   - RULE-SET,steam,😄 Steam
   - RULE-SET,xbox,🎮 Xbox
@@ -21,7 +21,7 @@ rules:
   - RULE-SET,nintendo,🎮 其他游戏平台
   - RULE-SET,google_fcm,📢 谷歌FCM
   - RULE-SET,google,🍀 Google
-  - RULE-SET,microsoft_bing,Ⓜ️ 微软Bing
+  - RULE-SET,microsoft_bing,Ⓜ 微软Bing
   - RULE-SET,microsoft_onedrive,Ⓜ️ 微软服务
   - RULE-SET,microsoft,Ⓜ️ 微软服务
   - RULE-SET,apple,🍎 苹果服务
@@ -32,7 +32,7 @@ rules:
   - RULE-SET,china,🎯 全球直连
   - RULE-SET,china_domain,🎯 全球直连
   - RULE-SET,china_company_ip,🎯 全球直连
-  - GEOSITE,CN,🎯 全球直连
+  - GEOSITE,cn,🎯 全球直连
   - GEOSITE,geolocation-!cn,🚀 节点选择
   - GEOIP,CN,🎯 全球直连,no-resolve
   - MATCH,🐟 漏网之鱼

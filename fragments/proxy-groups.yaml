@@ -43,7 +43,7 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
 
-  - name: 👨🏿‍💻 GitHub
+  - name: 💻 GitHub
     type: select
     include-all: true
     proxies:
@@ -57,7 +57,7 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
 
-  - name: 🐦︎ XGORK
+  - name: 🐦 XGORK
     type: select
     include-all: true
     proxies:
@@ -88,7 +88,7 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
 
-  - name: Ⓜ️ 微软Bing
+  - name: Ⓜ 微软Bing
     type: select
     proxies:
       - 🎯 全球直连
