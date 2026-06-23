@@ -94,7 +94,7 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
 
-  - name: Ⓜ️ 微软服务
+  - name: Ⓜ 微软服务
     type: select
     proxies:
       - 🎯 全球直连
