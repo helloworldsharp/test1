@@ -260,15 +260,6 @@ rule-providers:
     path: ./rule_provider/netflix.list
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
 
-  proxy_media:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/proxy_media.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyMedia.list
-
   proxy_gfwlist:
     type: http
     behavior: classical
@@ -304,12 +295,3 @@ rule-providers:
     proxy: 🚀 节点选择
     path: ./rule_provider/china_company_ip.list
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
-
-  download:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/download.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
