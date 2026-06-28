@@ -133,3 +133,10 @@ proxy-groups:
     proxies:
       - 🚀 节点选择
       - DIRECT
+
+  - name: GLOBAL
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - DIRECT
+      - REJECT
