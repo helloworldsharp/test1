@@ -7,6 +7,19 @@ payload:
   - 'DOMAIN-SUFFIX,time.windows.com'
   - 'DOMAIN-SUFFIX,lanzov.com'
 
+  # BiliBili International app, API, and playback CDN
+  - 'DOMAIN-SUFFIX,bilibili.tv'
+  - 'DOMAIN-SUFFIX,biliintl.com'
+  - 'DOMAIN-SUFFIX,biliintl.co'
+  - 'DOMAIN-SUFFIX,global.bilibili.com'
+  - 'DOMAIN-SUFFIX,bstarstatic.com'
+  - 'DOMAIN,apiintl.biliapi.net'
+  - 'DOMAIN,apm-misaka.biliapi.net'
+  - 'DOMAIN,p.bstarstatic.com'
+  - 'DOMAIN,p-bstarstatic.akamaized.net'
+  - 'DOMAIN,upos-bstar-mirrorakam.akamaized.net'
+  - 'DOMAIN,upos-bstar1-mirrorakam.akamaized.net'
+
   # Domestic DNS and resolver IP exceptions
   - 'IP-CIDR,219.146.1.66/32,no-resolve'
   - 'IP-CIDR,219.147.1.66/32,no-resolve'
