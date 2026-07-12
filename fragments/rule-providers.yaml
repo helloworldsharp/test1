@@ -15,7 +15,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/direct_custom.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/codex/rules-redesign/rules/custom/direct.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/custom/direct.yaml
 
   proxy_custom:
     type: http
@@ -24,7 +24,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/proxy_custom.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/codex/rules-redesign/rules/custom/proxy.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/custom/proxy.yaml
 
   src_alone:
     type: http
@@ -33,7 +33,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/src_alone.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/codex/rules-redesign/rules/custom/src-alone.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/custom/src-alone.yaml
 
   apple_push:
     type: http
@@ -42,7 +42,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/apple_push.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/codex/rules-redesign/rules/custom/apple-push.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/custom/apple-push.yaml
 
   ad_allow:
     type: http
@@ -51,7 +51,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/ad_allow.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/codex/rules-redesign/rules/custom/ad-allow.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/custom/ad-allow.yaml
 
   ad_anti_ad:
     type: http
