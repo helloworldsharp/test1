@@ -15,7 +15,14 @@ proxy-groups:
       - REJECT
       - DIRECT
 
-  - name: 📱 指定设备
+  - name: 📱 指定设备1
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🖱️ 指定设备2
     type: select
     include-all: true
     proxies:

@@ -1,0 +1,6 @@
+payload:
+  # other ipad iPhone surface
+  - 'SRC-IP-CIDR,192.168.50.126/32'
+  - 'SRC-IP-CIDR,192.168.50.167/32'
+  - 'SRC-IP-CIDR,192.168.50.182/32'
+  - 'SRC-IP-CIDR,192.168.50.146/32'

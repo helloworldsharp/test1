@@ -15,7 +15,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/direct_custom.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/custom/direct.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/direct.yaml
 
   proxy_custom:
     type: http
@@ -24,16 +24,25 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/proxy_custom.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/custom/proxy.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/proxy.yaml
 
-  src_alone:
+  src_alone1:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     proxy: 🚀 节点选择
-    path: ./rule_provider/src_alone.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/custom/src-alone.yaml
+    path: ./rule_provider/src_alone1.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/src-alone1.yaml
+
+  src_alone2:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/src_alone2.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/src-alone2.yaml
 
   apple_push:
     type: http
@@ -42,7 +51,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/apple_push.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/custom/apple-push.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/apple-push.yaml
 
   ad_allow:
     type: http
@@ -51,7 +60,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/ad_allow.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/custom/ad-allow.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/ad-allow.yaml
 
   ad_anti_ad:
     type: http
