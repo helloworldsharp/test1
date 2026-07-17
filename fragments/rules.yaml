@@ -8,7 +8,7 @@ rules:
   - RULE-SET,china,🎯 全球直连
   - RULE-SET,china_domain,🎯 全球直连
   - RULE-SET,china_company_ip,🎯 全球直连
-  - GEOSITE,cn,🎯 全球直连
+  - AND,((GEOSITE,cn),(NOT,((GEOSITE,google)))),🎯 全球直连
   - GEOIP,CN,🎯 全球直连,no-resolve
   - RULE-SET,src_alone1,📱 指定设备1
   - RULE-SET,src_alone2,🖱️ 指定设备2
