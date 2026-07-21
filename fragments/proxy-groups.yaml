@@ -3,20 +3,9 @@ proxy-groups:
     type: select
     include-all: true
 
-  - name: 🎯 全球直连
-    type: select
-    proxies:
-      - DIRECT
-      - 🚀 节点选择
-
-  - name: 🛡 广告拦截
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-
   - name: 📱 指定设备1
     type: select
+    default-selected: '🇯🇵 Japan | 01'
     include-all: true
     proxies:
       - 🚀 节点选择
@@ -24,12 +13,42 @@ proxy-groups:
 
   - name: 🖱️ 指定设备2
     type: select
+    default-selected: '🇯🇵 Japan | 02'
     include-all: true
     proxies:
       - 🚀 节点选择
       - 🎯 全球直连
 
-  - name: 🍀 Google
+  - name: 🪙 BNQ
+    type: select
+    default-selected: '🇯🇵 Japan | 03'
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 📈 海外券商
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
+  - name: 🎯 全球直连
+    type: select
+    default-selected: 'DIRECT'
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+
+  - name: 🛡 广告拦截
+    type: select
+    default-selected: 'REJECT'
+    proxies:
+      - REJECT
+      - DIRECT
+
+  - name: 🤖 AI
     type: select
     include-all: true
     proxies:
@@ -43,7 +62,7 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
 
-  - name: 🤖 AI
+  - name: 🍀 Google
     type: select
     include-all: true
     proxies:
@@ -51,20 +70,6 @@ proxy-groups:
       - 🎯 全球直连
 
   - name: 💻 GitHub
-    type: select
-    include-all: true
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-
-  - name: 🪙 BNQ
-    type: select
-    include-all: true
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-
-  - name: 📈 海外券商
     type: select
     include-all: true
     proxies:
