@@ -1,0 +1,4 @@
+payload:
+  # 被宽泛直连规则误判、但必须进入代理链的目标。
+  # 本文件只维护目标域名/IP 规则；来源设备分派由 fragments/rules.yaml 统一处理。
+  - 'DOMAIN-SUFFIX,ampproject.org'

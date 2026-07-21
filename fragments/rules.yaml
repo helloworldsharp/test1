@@ -5,6 +5,10 @@ rules:
   - RULE-SET,ad_anti_ad,🛡 广告拦截
   - RULE-SET,direct_custom,🎯 全球直连
   - RULE-SET,steam_cn,🎯 全球直连
+  # 高优先级代理例外：指定设备仍使用各自策略组，其他设备使用主代理组。
+  - AND,((RULE-SET,proxy_override),(RULE-SET,src_alone1)),📱 指定设备1
+  - AND,((RULE-SET,proxy_override),(RULE-SET,src_alone2)),🖱️ 指定设备2
+  - RULE-SET,proxy_override,🚀 节点选择
   - RULE-SET,china,🎯 全球直连
   - RULE-SET,china_domain,🎯 全球直连
   - RULE-SET,china_company_ip,🎯 全球直连

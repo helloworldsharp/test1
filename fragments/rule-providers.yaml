@@ -26,6 +26,15 @@ rule-providers:
     path: ./rule_provider/proxy_custom.yaml
     url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/proxy.yaml
 
+  proxy_override:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/proxy_override.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/proxy-override.yaml
+
   src_alone1:
     type: http
     behavior: classical
