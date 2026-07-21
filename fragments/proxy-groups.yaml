@@ -64,6 +64,13 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
 
+  - name: 📈 海外券商
+    type: select
+    include-all: true
+    proxies:
+      - 🚀 节点选择
+      - 🎯 全球直连
+
   - name: 🐦 XGORK
     type: select
     include-all: true

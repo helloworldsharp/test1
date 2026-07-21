@@ -19,6 +19,7 @@ rules:
   - RULE-SET,proxy_custom,🚀 节点选择
   - RULE-SET,binance,🪙 BNQ
   - RULE-SET,crypto,🪙 BNQ
+  - RULE-SET,wbrokers,📈 海外券商
   - RULE-SET,ai_openai,🤖 AI
   - RULE-SET,ai_anthropic,🤖 AI
   - RULE-SET,github,💻 GitHub

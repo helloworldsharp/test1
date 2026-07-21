@@ -1,0 +1,96 @@
+# IBKR + Charles Schwab / thinkorswim
+# Clash / Mihomo / Stash classical rule-provider
+# Updated: 2026-07-21
+# Scope: IBKR and Charles Schwab services used by this configuration;
+# this is not intended to cover every overseas broker.
+#
+# Reference sources:
+# https://github.com/jtzhpf/USTC-rules/blob/main/broker.list
+# https://github.com/ZanwingMak/diversion-rules/blob/master/rule/Securities/OverseasBrokers.list
+#
+# Cross-check references:
+# https://github.com/v2fly/domain-list-community/blob/master/data/ibkr
+# https://github.com/v2fly/domain-list-community/blob/master/data/schwab
+#
+# Deliberately excluded:
+# - shared third-party services such as launchdarkly.com, go-mpulse.net,
+#   zacks.com and trefis.com
+# - broad DOMAIN-KEYWORD, USER-AGENT and PROCESS-NAME rules
+# - redundant exact subdomains already covered by DOMAIN-SUFFIX
+
+payload:
+  # IBKR core trading infrastructure
+  - 'DOMAIN-SUFFIX,ibllc.com'
+  - 'DOMAIN-SUFFIX,ibllc.com.cn'
+
+  # IBKR brand and regional portals
+  - 'DOMAIN-SUFFIX,ibkr.ca'
+  - 'DOMAIN-SUFFIX,ibkr.co.in'
+  - 'DOMAIN-SUFFIX,ibkr.co.uk'
+  - 'DOMAIN-SUFFIX,ibkr.com'
+  - 'DOMAIN-SUFFIX,ibkr.com.au'
+  - 'DOMAIN-SUFFIX,ibkr.com.cn'
+  - 'DOMAIN-SUFFIX,ibkr.com.hk'
+  - 'DOMAIN-SUFFIX,ibkr.com.sg'
+  - 'DOMAIN-SUFFIX,ibkr.eu'
+  - 'DOMAIN-SUFFIX,ibkr.hk'
+  - 'DOMAIN-SUFFIX,ibkr.ie'
+  - 'DOMAIN-SUFFIX,interactivebrokers.ca'
+  - 'DOMAIN-SUFFIX,interactivebrokers.ch'
+  - 'DOMAIN-SUFFIX,interactivebrokers.co.in'
+  - 'DOMAIN-SUFFIX,interactivebrokers.co.jp'
+  - 'DOMAIN-SUFFIX,interactivebrokers.co.uk'
+  - 'DOMAIN-SUFFIX,interactivebrokers.com'
+  - 'DOMAIN-SUFFIX,interactivebrokers.com.au'
+  - 'DOMAIN-SUFFIX,interactivebrokers.com.hk'
+  - 'DOMAIN-SUFFIX,interactivebrokers.com.sg'
+  - 'DOMAIN-SUFFIX,interactivebrokers.eu'
+  - 'DOMAIN-SUFFIX,interactivebrokers.hk'
+  - 'DOMAIN-SUFFIX,interactivebrokers.hu'
+  - 'DOMAIN-SUFFIX,interactivebrokers.ie'
+  - 'DOMAIN-SUFFIX,interactivebrokers.lu'
+
+  # IBKR products and related official services
+  - 'DOMAIN-SUFFIX,ibkrguides.com'
+  - 'DOMAIN-SUFFIX,interactiveadvisors.com'
+  - 'DOMAIN-SUFFIX,ibkram.com'
+  - 'DOMAIN-SUFFIX,clientam.com'
+  - 'DOMAIN-SUFFIX,clientam.ch'
+  - 'DOMAIN-SUFFIX,clientam.com.hk'
+  - 'DOMAIN-SUFFIX,ibkrcampus.com'
+  - 'DOMAIN-SUFFIX,portfolioanalyst.com'
+  - 'DOMAIN-SUFFIX,interactivebrokers.github.io'
+
+  # Charles Schwab core and regional portals
+  - 'DOMAIN-SUFFIX,aboutschwab.com'
+  - 'DOMAIN-SUFFIX,charlesschwab.com'
+  - 'DOMAIN-SUFFIX,schwab.co.uk'
+  - 'DOMAIN-SUFFIX,schwab.com'
+  - 'DOMAIN-SUFFIX,schwab.com.cn'
+  - 'DOMAIN-SUFFIX,schwab.com.hk'
+  - 'DOMAIN-SUFFIX,schwab.com.sg'
+  - 'DOMAIN-SUFFIX,schwab.net'
+
+  # Schwab platforms and official ecosystem
+  - 'DOMAIN-SUFFIX,schwaballiance.com'
+  - 'DOMAIN-SUFFIX,schwabapi.com'
+  - 'DOMAIN-SUFFIX,schwabassetmanagement.com'
+  - 'DOMAIN-SUFFIX,schwabbank.com'
+  - 'DOMAIN-SUFFIX,schwabcdn.com'
+  - 'DOMAIN-SUFFIX,schwabcharitable.org'
+  - 'DOMAIN-SUFFIX,schwabfoundation.org'
+  - 'DOMAIN-SUFFIX,schwabjobs.com'
+  - 'DOMAIN-SUFFIX,schwabmoneywise.com'
+  - 'DOMAIN-SUFFIX,schwabnetwork.com'
+  - 'DOMAIN-SUFFIX,schwabplan.com'
+
+  # thinkorswim and TD Ameritrade legacy compatibility
+  - 'DOMAIN-SUFFIX,thinkorswim.com'
+  - 'DOMAIN-SUFFIX,tos.mx'
+  - 'DOMAIN-SUFFIX,tdameritrade.com'
+  - 'DOMAIN-SUFFIX,ameritrade.com'
+
+  # Optional Schwab-owned IP ranges; disabled by default.
+  # Domain rules are easier to maintain and safer for cross-client use.
+  # - IP-CIDR,162.93.0.0/16,no-resolve
+  # - IP-CIDR,74.114.36.0/22,no-resolve

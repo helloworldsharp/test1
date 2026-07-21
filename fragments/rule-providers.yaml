@@ -134,6 +134,15 @@ rule-providers:
     path: ./rule_provider/crypto.list
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Crypto.list
 
+  wbrokers:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/wbrokers.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/wbrokers.yaml
+
   twitter:
     type: http
     behavior: classical
