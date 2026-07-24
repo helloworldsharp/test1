@@ -62,7 +62,7 @@ proxy-groups:
       - 🚀 节点选择
       - 🎯 全球直连
 
-  - name: 🍀 Google
+  - name: 🍀 Google相关
     type: select
     include-all: true
     proxies:
@@ -101,12 +101,6 @@ proxy-groups:
       - 🎯 全球直连
       - 🚀 节点选择
 
-  - name: 📢 谷歌FCM
-    type: select
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-
   - name: Ⓜ 微软Bing
     type: select
     proxies:
@@ -126,13 +120,6 @@ proxy-groups:
       - 🚀 节点选择
 
   - name: 📲 电报消息
-    type: select
-    include-all: true
-    proxies:
-      - 🚀 节点选择
-      - 🎯 全球直连
-
-  - name: 📹 油管视频
     type: select
     include-all: true
     proxies:

@@ -30,14 +30,14 @@ rules:
   - RULE-SET,origin,🎮 其他游戏平台
   - RULE-SET,sony,🎮 其他游戏平台
   - RULE-SET,nintendo,🎮 其他游戏平台
-  - RULE-SET,google_fcm,📢 谷歌FCM
-  - RULE-SET,google,🍀 Google
+  - RULE-SET,google_fcm,🍀 Google相关
+  - RULE-SET,google,🍀 Google相关
   - RULE-SET,microsoft_bing,Ⓜ 微软Bing
   - RULE-SET,microsoft_onedrive,Ⓜ 微软服务
   - RULE-SET,microsoft,Ⓜ 微软服务
   - RULE-SET,apple,🍎 苹果服务
   - RULE-SET,telegram,📲 电报消息
-  - RULE-SET,youtube,📹 油管视频
+  - RULE-SET,youtube,🍀 Google相关
   - RULE-SET,netflix,🎥 奈飞视频
   - RULE-SET,proxy_gfwlist,🚀 节点选择
   - GEOSITE,geolocation-!cn,🚀 节点选择
