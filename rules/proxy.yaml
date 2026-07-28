@@ -32,6 +32,8 @@ payload:
   - 'IP-CIDR,103.115.43.2/32,no-resolve'
 
   # 国外DNS
+  - 'DOMAIN,freedns.controld.com'
+  - 'DOMAIN,unfiltered.adguard-dns.com'
   - 'DOMAIN-SUFFIX,dns.google'
   - 'DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com'
   - 'DOMAIN-SUFFIX,dot.sb'
