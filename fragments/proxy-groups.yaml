@@ -21,7 +21,7 @@ proxy-groups:
 
   - name: 💶 Bybit
     type: select
-    default-selected: '🇹🇼 Taiwan | 03'
+    default-selected: '🇨🇳 Taiwan | 03'
     include-all: true
     proxies:
       - 🚀 节点选择
