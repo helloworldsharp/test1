@@ -116,6 +116,15 @@ rule-providers:
     path: ./rule_provider/github.yaml
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
 
+  bybit:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/bybit.yaml
+    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.yaml
+
   binance:
     type: http
     behavior: classical
