@@ -21,7 +21,7 @@ proxy-groups:
 
   - name: 🪙 BNQ
     type: select
-    default-selected: '🇯🇵 Japan | 03'
+    default-selected: 'GOMA-JPN-1'
     include-all: true
     proxies:
       - 🚀 节点选择
