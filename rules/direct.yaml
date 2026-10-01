@@ -7,6 +7,12 @@ payload:
   - 'DOMAIN-SUFFIX,time.windows.com'
   - 'DOMAIN-SUFFIX,lanzov.com'
 
+  # Ookla server discovery and measurement (all source devices)
+  - 'DOMAIN-SUFFIX,speedtest.net'
+  - 'DOMAIN-SUFFIX,ooklaserver.net'
+  # Explicit third-party endpoint: Kunshan test candidate, not a default server
+  - 'DOMAIN,speedtest.dukekunshan.edu.cn'
+
   # BiliBili International app, API, and playback CDN
   - 'DOMAIN-SUFFIX,bilibili.tv'
   - 'DOMAIN-SUFFIX,biliintl.com'
