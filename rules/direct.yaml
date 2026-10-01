@@ -17,8 +17,10 @@ payload:
   - 'DOMAIN-SUFFIX,cdnst.net'
   - 'DOMAIN-SUFFIX,pingtest.net'
   - 'DOMAIN-SUFFIX,webtest.net'
-  # Observed Ookla server without speedtest/ookla in its hostname
+  # Observed Ookla servers without speedtest/ookla in their hostnames
   - 'DOMAIN,speed.udx.icscoe.jp'
+  - 'DOMAIN,da-speed.kbro.com.tw'
+  - 'DOMAIN,ty1.chtm.hinet.net'
 
   # BiliBili International app, API, and playback CDN
   - 'DOMAIN-SUFFIX,bilibili.tv'
