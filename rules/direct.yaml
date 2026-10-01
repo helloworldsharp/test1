@@ -10,6 +10,15 @@ payload:
   # Ookla server discovery and measurement (all source devices)
   - 'DOMAIN-SUFFIX,speedtest.net'
   - 'DOMAIN-SUFFIX,ooklaserver.net'
+  # Third-party test servers also use their own domains
+  - 'DOMAIN-KEYWORD,speedtest'
+  - 'DOMAIN-KEYWORD,ookla'
+  # Web resources and ancillary measurement services
+  - 'DOMAIN-SUFFIX,cdnst.net'
+  - 'DOMAIN-SUFFIX,pingtest.net'
+  - 'DOMAIN-SUFFIX,webtest.net'
+  # Observed Ookla server without speedtest/ookla in its hostname
+  - 'DOMAIN,speed.udx.icscoe.jp'
 
   # BiliBili International app, API, and playback CDN
   - 'DOMAIN-SUFFIX,bilibili.tv'
