@@ -22,14 +22,16 @@
 | 真实订阅缓存构建 | 经用户同意复用过期缓存后成功；原缓存、VPS 输入与 pref.toml hash 未变 |
 | final 与 Stash | 离线校验及本地 Mihomo 语法检查通过；有 default-selected 的目标均存在于真实候选 |
 | PowerShell 与 diff | UI 脚本语法及两个 repository 的 diff check 通过 |
+| GitHub CI | [公共规则](https://github.com/helloworldsharp/test1/actions/runs/37037058447)与[Windows dingyue](https://github.com/helloworldsharp/proxy-rule-tools/actions/runs/37037049830)均通过；正式 publish job 为 skipped |
+| 开发 branch 读回 | 两仓库 branch/upstream 已建立；36 个 provider 的 Raw 内容与公共 commit 字节一致，两个 main 未改变 |
 
 测试命令见更新器 README 和 private dingyue README。私密候选与本地完整日志保存在项目外 backups，不进入公共 repository。
 
 ## 尚未完成的生产验收
 
-- 远端 CI 需在开发 branch 发布后取得实际运行结果。
+- 现场生产内核是 Mihomo Meta alpha-g24b6de7，与本地/CI 的 v1.19.32 不同；现场候选检查尚未执行。
 - 未合入生产 main，provider URL 仍指向开发 branch；生产稳定 URL 切换须与配置迁移一起验证。
 - 未 upload/activate/reload/restart；活动 OpenClash 的版本、数据、selector chain 与实际业务连接尚未以新候选验收。
 - Stash 未实机导入；Verge 的候选必须在 OpenClash 启用后从实际 runtime 派生，当前未将旧 runtime 冒充新版本。
 - GitHub 正式自动发布及失败邮件设置/收件未启用或验证；配置文件存在不代表 schedule 已运行。
-- 生产恢复材料尚需冻结活动配置、cache 和实际 DNS/Geo 数据依赖。本地候选可直接弃用，不表示已完成线上回滚演练。
+- 已只读保存活动与 managed 配置、provider cache、GeoSite.dat、Country.mmdb、ASN.mmdb 和 22 个组的当前选择；生产迁移前仍需复核时效性，恢复操作尚未演练。磁盘快照不等于完整复现内核内存状态。
