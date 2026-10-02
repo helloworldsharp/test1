@@ -1,0 +1,431 @@
+{
+  "sources": {
+    "old_lan": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/LocalAreaNetwork.list",
+      "sha256": "0789504d97d8f5b14513c529c61c06f4f862c5cfd20f7cb30bbcd38357e54468",
+      "rules": 33
+    },
+    "old_ad_anti_ad": {
+      "url": "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/92c0343b0c5388647b147e9578178517b66aebb6/anti-ad-clash.yaml",
+      "sha256": "ccfb67457e2655bfe701d8036fab1d849646fd15aa5f725bc674e744b8726b3b",
+      "rules": 100064
+    },
+    "old_google": {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Google/Google.yaml",
+      "sha256": "dfb4bf0a0095e48f024fbb7c31564a928e6c7d450b662aca9803119489a9237c",
+      "rules": 700
+    },
+    "old_github": {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/GitHub/GitHub.yaml",
+      "sha256": "a2641ce2f10857831b600623f97d354e6f8db7b20dff175c5313c2c46e0b6867",
+      "rules": 31
+    },
+    "old_bybit": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/bybit.yaml",
+      "sha256": "4973b843eecfb15f8e29d4b4debafd80b69184340ab46ee767946f400686ea45",
+      "rules": 16
+    },
+    "old_binance": {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Binance/Binance.yaml",
+      "sha256": "bc7d8355e8057590601cd8c1c52b9fd693eed854acedac01eb30421df44e46e2",
+      "rules": 12
+    },
+    "old_crypto": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/Ruleset/Crypto.list",
+      "sha256": "c2d91de7270642af82c416cdd5ba439dc9cbc4d4dd9bff20633ecd6213445741",
+      "rules": 252
+    },
+    "old_twitter": {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Twitter/Twitter.yaml",
+      "sha256": "67c46c3988da5cdc387eacee945c2950464691af0e2746929455cd9295c3ff2b",
+      "rules": 33
+    },
+    "old_steam_cn": {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/SteamCN/SteamCN.yaml",
+      "sha256": "9001a292467843777e7b97b7a78224da8a259f5e6fcb5d36e4413c28296875e4",
+      "rules": 17
+    },
+    "old_steam": {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Steam/Steam.yaml",
+      "sha256": "585e423c866bb020421a79dd2842f279b56ef94bf487fbee13354796958dcad6",
+      "rules": 54
+    },
+    "old_origin": {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Origin/Origin.yaml",
+      "sha256": "fe832c54fbf733f2474ac69a39e66b3a7d266d8277c573f2a126bafa0b457481",
+      "rules": 7
+    },
+    "old_sony": {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Sony/Sony.yaml",
+      "sha256": "2ba664229ac5bd40edf2b99fd0cfbac2ee8d757bb5700c0cd638cfc0fdef057a",
+      "rules": 116
+    },
+    "old_nintendo": {
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Nintendo/Nintendo.yaml",
+      "sha256": "aa9bce448f8c8740b0d59bec6e2869d4bf1ffcade4a59895bef64c141775e930",
+      "rules": 126
+    },
+    "old_google_fcm": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/Ruleset/GoogleFCM.list",
+      "sha256": "f115f84bef66a5aa931fd20f23d6914cdfdfe3d07795d65549d578b91a0f0c48",
+      "rules": 44
+    },
+    "old_microsoft": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/Microsoft.list",
+      "sha256": "b502566c1b86d5512111bd4a2bb5d808eda4e36aad3009a3ca05da354c09449e",
+      "rules": 79
+    },
+    "old_apple": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/Apple.list",
+      "sha256": "7b2e60cd0bf3c4bfb1369890d39cc3783bdfcb016089b78acee0ff6f0d4e51c5",
+      "rules": 29
+    },
+    "old_netflix": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/Ruleset/Netflix.list",
+      "sha256": "eb09e16b5aa228230e5770bfc04f2eb25261454a0b2e16f05fd3e9d2ab5202b5",
+      "rules": 40
+    },
+    "old_proxy_gfwlist": {
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/ProxyGFWlist.list",
+      "sha256": "72d5f97cb3adedd7ef632962effda4aa3b9953da20427cd6050d55d1184de5ea",
+      "rules": 6880
+    },
+    "meta_cn": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/cn.yaml",
+      "sha256": "043d6c1d338b56807253741e60c1645e7661bcedcd2f76fbe0c2d866591038f3",
+      "rules": 111224
+    },
+    "meta_openai": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/openai.yaml",
+      "sha256": "ea7ffb2db4d913f8cc67d3e7be19035155aba5247032592d8130b8f6552fdd56",
+      "rules": 23
+    },
+    "meta_anthropic": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/anthropic.yaml",
+      "sha256": "f85584027478449a011d5011dd20d8bedd9c641e0e8e5a85f698008a09b00e32",
+      "rules": 8
+    },
+    "meta_github": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/github.yaml",
+      "sha256": "43b2e93766f1ea80f5c0bec3b617b3a4475bf0283db8e5e6e6fa44df8e2de3a5",
+      "rules": 64
+    },
+    "meta_binance": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/binance.yaml",
+      "sha256": "2c3535d477a8d4ed7fbde9640629bffe108fe5f395ff5aad182d13f76b373f55",
+      "rules": 45
+    },
+    "meta_twitter": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/twitter.yaml",
+      "sha256": "3c9277372816fc5fe4dc79a3a72465af12efd84a6d328f52ee7ff4b400bf6db4",
+      "rules": 24
+    },
+    "meta_xai": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/xai.yaml",
+      "sha256": "85e9ac5b4a9258c2adbece98820c66231da78e69dc8ff455a51509596fc71ce1",
+      "rules": 4
+    },
+    "meta_youtube": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/youtube.yaml",
+      "sha256": "c4e9bdb1ca911692a3887a950fe06cc09e3d525a4916ae78a9b5a2a9568d2ec1",
+      "rules": 178
+    },
+    "meta_bing": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/bing.yaml",
+      "sha256": "3f7e93d9185fc25983aee3fc6bd041ad13577aee1c179c09b59569e548d1ba3e",
+      "rules": 40
+    },
+    "meta_onedrive": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/onedrive.yaml",
+      "sha256": "80849329037380feabbb958ab4ca1400e5c1093a18ed9cb8de4acf1360a6f1c5",
+      "rules": 19
+    },
+    "meta_microsoft": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/microsoft.yaml",
+      "sha256": "448132d4780053f7561ded8f66f75a4ed16aa1a554d2b0569379d628a053ef72",
+      "rules": 749
+    },
+    "meta_xbox": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/xbox.yaml",
+      "sha256": "c89f54be0032229fa6c273e3c5e84f95f28e3caffb422ac64c4fe194c7ff31df",
+      "rules": 45
+    },
+    "meta_epicgames": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/epicgames.yaml",
+      "sha256": "4e4389b52aa9da4418608910457c43cc6ae31064a4b15d7601cea10a550a8e73",
+      "rules": 33
+    },
+    "meta_ea": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/ea.yaml",
+      "sha256": "13ccaaccccf4ee696a9d5c6f532dfcefed16f155f383dfb509f11a7b702e1f2d",
+      "rules": 165
+    },
+    "meta_telegram": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/telegram.yaml",
+      "sha256": "6c357c7799ad105074a318f6251d33901a1bfffd60051fa7e5fad73c04d0af4b",
+      "rules": 21
+    },
+    "meta_netflix": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/netflix.yaml",
+      "sha256": "d2dd4babc01c6794931f71807936650cc0d886c4620ef6f014150575b38b6fb2",
+      "rules": 28
+    },
+    "meta_geolocation-!cn": {
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/geolocation-!cn.yaml",
+      "sha256": "be4841f25b67a87d6233df131b801f628d4f31611c853385c23937fb7b9ea0e7",
+      "rules": 27215
+    },
+    "china_ipv4": {
+      "url": "https://raw.githubusercontent.com/gaoyifan/china-operator-ip/d0b41caab13e4d80fbeca47d73839489d92a1a48/china.txt",
+      "sha256": "abef18717fbf33392db9cb07f500fb7ba9efb0d45e5c8d8e57db761251ed9e6c",
+      "rules": 6205
+    },
+    "telegram_ipv4": {
+      "url": "https://core.telegram.org/resources/cidr.txt",
+      "sha256": "3ecd072cedf72eceee6961b18a51e37f905d5ce4a656a5d24cf5fea63e6ec651",
+      "rules": 9
+    },
+    "wbrokers": {
+      "url": "rules/wbrokers.yaml",
+      "sha256": "65732286453909278a15554d0185daed7545657e2f80b71747438a671ed01385",
+      "rules": 59
+    }
+  },
+  "outputs": {
+    "lan": {
+      "rules": 33,
+      "sha256": "51350776495b1de1c81a3719fc9b274a59a54e5ca4a786686f460facbc032458",
+      "types": {
+        "DOMAIN": 4,
+        "DOMAIN-SUFFIX": 20,
+        "IP-CIDR": 9
+      }
+    },
+    "ad_anti_ad": {
+      "rules": 100064,
+      "sha256": "3ff6196cc3e612010627c27c1633077a0969b04f358603dea29d662c706e3e1f",
+      "types": {
+        "domain": 100064
+      }
+    },
+    "bybit": {
+      "rules": 16,
+      "sha256": "bc918a1826dc4fc46bfdd1a3d1d498fecb8a8dc77c0c88063e805951ade3ec9b",
+      "types": {
+        "DOMAIN": 2,
+        "DOMAIN-SUFFIX": 14
+      }
+    },
+    "crypto": {
+      "rules": 252,
+      "sha256": "711736c101c1fc80bd2b766764aa3f63851a4881f06ad2df7d22dc6c630b6e89",
+      "types": {
+        "DOMAIN": 2,
+        "DOMAIN-KEYWORD": 4,
+        "DOMAIN-SUFFIX": 243,
+        "PROCESS-NAME": 3
+      }
+    },
+    "google": {
+      "rules": 700,
+      "sha256": "4764caa25466fccc29dbb63ce8f8ddcd260d4d07e1c366873c28edac0f62cf28",
+      "types": {
+        "DOMAIN": 1,
+        "DOMAIN-KEYWORD": 5,
+        "DOMAIN-SUFFIX": 684,
+        "IP-CIDR": 4,
+        "PROCESS-NAME": 6
+      }
+    },
+    "google_fcm": {
+      "rules": 44,
+      "sha256": "8d217bc4bf8f7be5f672b588103393143fd664d8c62b7f6c236b2723780c9acc",
+      "types": {
+        "DOMAIN": 18,
+        "IP-CIDR": 26
+      }
+    },
+    "apple": {
+      "rules": 27,
+      "sha256": "74b58f8ba57b059aef008191adb80d5d98afe5853997685cdf8c5535bd1121a8",
+      "types": {
+        "DOMAIN": 1,
+        "DOMAIN-SUFFIX": 16,
+        "IP-CIDR": 10
+      }
+    },
+    "steam": {
+      "rules": 54,
+      "sha256": "85b21af308076a84cb5591f0c0e725a56de7dff862085adf1e912cfc95308bc2",
+      "types": {
+        "DOMAIN-KEYWORD": 3,
+        "DOMAIN-SUFFIX": 51
+      }
+    },
+    "steam_cn": {
+      "rules": 17,
+      "sha256": "6b54df41cb006ec848223cc9926b520ceb7f3486720f873f6954f6ca0ede7528",
+      "types": {
+        "DOMAIN": 12,
+        "DOMAIN-SUFFIX": 5
+      }
+    },
+    "sony": {
+      "rules": 116,
+      "sha256": "ae1ad32750d24cbd85d843048148f887b256086f9e0606d2e4ef3119240ef10d",
+      "types": {
+        "DOMAIN": 1,
+        "DOMAIN-SUFFIX": 115
+      }
+    },
+    "nintendo": {
+      "rules": 125,
+      "sha256": "3350dc52a7b1a31a1b38c6d4c70b3fba8feb53b265936d4b8c55ca7647e69c90",
+      "types": {
+        "DOMAIN-SUFFIX": 125
+      }
+    },
+    "proxy_gfwlist": {
+      "rules": 6880,
+      "sha256": "e723a6382ecc85b10827b9aa7a20e21bfa9e6398bdfc9cb6ca5c5e0a06a24220",
+      "types": {
+        "DOMAIN": 7,
+        "DOMAIN-KEYWORD": 25,
+        "DOMAIN-SUFFIX": 6768,
+        "IP-CIDR": 80
+      }
+    },
+    "ai_openai": {
+      "rules": 24,
+      "sha256": "a27d06c569f81685339746ee42ee5f602e64afd2c7b2edc4acc161673a381f08",
+      "types": {
+        "DOMAIN": 10,
+        "DOMAIN-REGEX": 1,
+        "DOMAIN-SUFFIX": 13
+      }
+    },
+    "ai_anthropic": {
+      "rules": 8,
+      "sha256": "ab371ddaea4fbf4d5dfe4874980031ea0dca1c3636fbe747078d77f4af95d8cd",
+      "types": {
+        "DOMAIN": 1,
+        "DOMAIN-SUFFIX": 7
+      }
+    },
+    "github": {
+      "rules": 69,
+      "sha256": "cd29e365dd669f4a07a5cb4b5459dd6357eb793e9718dff2d0012ed6c4158f59",
+      "types": {
+        "DOMAIN": 32,
+        "DOMAIN-SUFFIX": 37
+      }
+    },
+    "binance": {
+      "rules": 48,
+      "sha256": "f1c49fada56e0fbddfa0b870a06cb7ba90817d1c82f1131753623d85e9c4b164",
+      "types": {
+        "DOMAIN": 2,
+        "DOMAIN-SUFFIX": 46
+      }
+    },
+    "twitter": {
+      "rules": 36,
+      "sha256": "dafe3bf13fd106785939bec80f0a7fa62a5f50ffd0616723c1d4596274140049",
+      "types": {
+        "DOMAIN-SUFFIX": 30,
+        "IP-CIDR": 6
+      }
+    },
+    "youtube": {
+      "rules": 179,
+      "sha256": "b2e7dab83e8f957835f92a47fa54142e98cd10abd1130647519f5a0bf209d886",
+      "types": {
+        "DOMAIN": 1,
+        "DOMAIN-SUFFIX": 178
+      }
+    },
+    "microsoft": {
+      "rules": 778,
+      "sha256": "c89aa95d7609c39c0c3920ee95ed1f304a699c8c958c6db6428aea9e2c49e96d",
+      "types": {
+        "DOMAIN": 113,
+        "DOMAIN-KEYWORD": 3,
+        "DOMAIN-SUFFIX": 662
+      }
+    },
+    "xbox": {
+      "rules": 45,
+      "sha256": "f01896d798bc6cce780f160b6efeb158331a0c49721bfb3812e204862ed8e940",
+      "types": {
+        "DOMAIN": 2,
+        "DOMAIN-SUFFIX": 43
+      }
+    },
+    "epic": {
+      "rules": 33,
+      "sha256": "37f4039068aae890182cad6a247baccab93630f0a77256fbfd1fef802d8bf52e",
+      "types": {
+        "DOMAIN-REGEX": 3,
+        "DOMAIN-SUFFIX": 30
+      }
+    },
+    "origin": {
+      "rules": 167,
+      "sha256": "a206e710b590b832157ea0dd1f5a28122e0f7bcdb4357b8e2ece5ad5be419b39",
+      "types": {
+        "DOMAIN": 8,
+        "DOMAIN-SUFFIX": 159
+      }
+    },
+    "telegram": {
+      "rules": 30,
+      "sha256": "1e15789f090b5995ac26d991d5b51c9de97c97f55e76273d109c57df4513ac2f",
+      "types": {
+        "DOMAIN-SUFFIX": 21,
+        "IP-CIDR": 9
+      }
+    },
+    "netflix": {
+      "rules": 46,
+      "sha256": "09e568f6a6af1e773e02e6aac467860a38f45d187aa02ccc1dd4c44de85afb0c",
+      "types": {
+        "DOMAIN": 1,
+        "DOMAIN-REGEX": 4,
+        "DOMAIN-SUFFIX": 23,
+        "IP-CIDR": 18
+      }
+    },
+    "china_domain": {
+      "rules": 111224,
+      "sha256": "a43e272fe76e3048aea4b5b947b35dbf5fd4cb739bd40d8120700aae4d45e19d",
+      "types": {
+        "DOMAIN-SUFFIX": 111224
+      }
+    },
+    "proxy_foreign": {
+      "rules": 27215,
+      "sha256": "972f8e63b4d74130e665a72d32157d1b68f8160bfac734e0c3302da986ab0312",
+      "types": {
+        "DOMAIN": 753,
+        "DOMAIN-REGEX": 151,
+        "DOMAIN-SUFFIX": 26311
+      }
+    },
+    "china_company_ip": {
+      "rules": 6205,
+      "sha256": "540161bbdfc21769115c226ce18c37547e29e5c8b162ecec075a1446e19bcf37",
+      "types": {
+        "IP-CIDR": 6205
+      }
+    },
+    "china_exclusions": {
+      "rules": 749,
+      "sha256": "4f89c3a4618a21c6c9c50b70ded496e223b05a960d8d5f621f72969f811c829d",
+      "types": {
+        "DOMAIN": 1,
+        "DOMAIN-KEYWORD": 5,
+        "DOMAIN-SUFFIX": 743
+      }
+    }
+  }
+}

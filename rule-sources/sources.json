@@ -1,0 +1,543 @@
+{
+  "sources": {
+    "old_lan": {
+      "repo": "ACL4SSR/ACL4SSR",
+      "ref": "master",
+      "path": "Clash/LocalAreaNetwork.list",
+      "format": "text",
+      "behavior": "classical"
+    },
+    "old_ad_anti_ad": {
+      "repo": "privacy-protection-tools/anti-AD",
+      "ref": "master",
+      "path": "anti-ad-clash.yaml",
+      "format": "yaml",
+      "behavior": "domain"
+    },
+    "old_google": {
+      "repo": "blackmatrix7/ios_rule_script",
+      "ref": "master",
+      "path": "rule/Clash/Google/Google.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "old_github": {
+      "repo": "blackmatrix7/ios_rule_script",
+      "ref": "master",
+      "path": "rule/Clash/GitHub/GitHub.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "old_bybit": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/bybit.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "old_binance": {
+      "repo": "blackmatrix7/ios_rule_script",
+      "ref": "master",
+      "path": "rule/Clash/Binance/Binance.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "old_crypto": {
+      "repo": "ACL4SSR/ACL4SSR",
+      "ref": "master",
+      "path": "Clash/Ruleset/Crypto.list",
+      "format": "text",
+      "behavior": "classical"
+    },
+    "old_twitter": {
+      "repo": "blackmatrix7/ios_rule_script",
+      "ref": "master",
+      "path": "rule/Clash/Twitter/Twitter.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "old_steam_cn": {
+      "repo": "blackmatrix7/ios_rule_script",
+      "ref": "master",
+      "path": "rule/Clash/SteamCN/SteamCN.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "old_steam": {
+      "repo": "blackmatrix7/ios_rule_script",
+      "ref": "master",
+      "path": "rule/Clash/Steam/Steam.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "old_origin": {
+      "repo": "blackmatrix7/ios_rule_script",
+      "ref": "master",
+      "path": "rule/Clash/Origin/Origin.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "old_sony": {
+      "repo": "blackmatrix7/ios_rule_script",
+      "ref": "master",
+      "path": "rule/Clash/Sony/Sony.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "old_nintendo": {
+      "repo": "blackmatrix7/ios_rule_script",
+      "ref": "master",
+      "path": "rule/Clash/Nintendo/Nintendo.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "old_google_fcm": {
+      "repo": "ACL4SSR/ACL4SSR",
+      "ref": "master",
+      "path": "Clash/Ruleset/GoogleFCM.list",
+      "format": "text",
+      "behavior": "classical"
+    },
+    "old_microsoft": {
+      "repo": "ACL4SSR/ACL4SSR",
+      "ref": "master",
+      "path": "Clash/Microsoft.list",
+      "format": "text",
+      "behavior": "classical"
+    },
+    "old_apple": {
+      "repo": "ACL4SSR/ACL4SSR",
+      "ref": "master",
+      "path": "Clash/Apple.list",
+      "format": "text",
+      "behavior": "classical"
+    },
+    "old_netflix": {
+      "repo": "ACL4SSR/ACL4SSR",
+      "ref": "master",
+      "path": "Clash/Ruleset/Netflix.list",
+      "format": "text",
+      "behavior": "classical"
+    },
+    "old_proxy_gfwlist": {
+      "repo": "ACL4SSR/ACL4SSR",
+      "ref": "master",
+      "path": "Clash/ProxyGFWlist.list",
+      "format": "text",
+      "behavior": "classical"
+    },
+    "meta_cn": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/cn.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_openai": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/openai.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_anthropic": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/anthropic.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_github": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/github.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_binance": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/binance.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_twitter": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/twitter.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_xai": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/xai.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_youtube": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/youtube.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_bing": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/bing.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_onedrive": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/onedrive.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_microsoft": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/microsoft.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_xbox": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/xbox.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_epicgames": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/epicgames.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_ea": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/ea.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_telegram": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/telegram.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_netflix": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/netflix.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "meta_geolocation-!cn": {
+      "repo": "MetaCubeX/meta-rules-dat",
+      "ref": "meta",
+      "path": "geo/geosite/classical/geolocation-!cn.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    },
+    "china_ipv4": {
+      "repo": "gaoyifan/china-operator-ip",
+      "ref": "ip-lists",
+      "path": "china.txt",
+      "format": "text",
+      "behavior": "ipcidr"
+    },
+    "telegram_ipv4": {
+      "url": "https://core.telegram.org/resources/cidr.txt",
+      "format": "text",
+      "behavior": "ipcidr"
+    },
+    "wbrokers": {
+      "local": "rules/wbrokers.yaml",
+      "format": "yaml",
+      "behavior": "classical"
+    }
+  },
+  "outputs": {
+    "lan": {
+      "parts": [
+        {
+          "source": "old_lan"
+        }
+      ],
+      "behavior": "classical"
+    },
+    "ad_anti_ad": {
+      "parts": [
+        {
+          "source": "old_ad_anti_ad"
+        }
+      ],
+      "behavior": "domain"
+    },
+    "bybit": {
+      "parts": [
+        {
+          "source": "old_bybit"
+        }
+      ],
+      "behavior": "classical"
+    },
+    "crypto": {
+      "parts": [
+        {
+          "source": "old_crypto"
+        }
+      ],
+      "behavior": "classical"
+    },
+    "google": {
+      "parts": [
+        {
+          "source": "old_google"
+        }
+      ],
+      "behavior": "classical"
+    },
+    "google_fcm": {
+      "parts": [
+        {
+          "source": "old_google_fcm"
+        }
+      ],
+      "behavior": "classical"
+    },
+    "apple": {
+      "parts": [
+        {
+          "source": "old_apple"
+        }
+      ],
+      "behavior": "classical"
+    },
+    "steam": {
+      "parts": [
+        {
+          "source": "old_steam"
+        }
+      ],
+      "behavior": "classical"
+    },
+    "steam_cn": {
+      "parts": [
+        {
+          "source": "old_steam_cn"
+        }
+      ],
+      "behavior": "classical"
+    },
+    "sony": {
+      "parts": [
+        {
+          "source": "old_sony"
+        }
+      ],
+      "behavior": "classical"
+    },
+    "nintendo": {
+      "parts": [
+        {
+          "source": "old_nintendo"
+        }
+      ],
+      "behavior": "classical"
+    },
+    "proxy_gfwlist": {
+      "parts": [
+        {
+          "source": "old_proxy_gfwlist"
+        }
+      ],
+      "behavior": "classical"
+    },
+    "ai_openai": {
+      "parts": [
+        {
+          "source": "meta_openai"
+        }
+      ]
+    },
+    "ai_anthropic": {
+      "parts": [
+        {
+          "source": "meta_anthropic"
+        }
+      ]
+    },
+    "github": {
+      "parts": [
+        {
+          "source": "meta_github"
+        },
+        {
+          "source": "old_github",
+          "types": [
+            "DOMAIN",
+            "DOMAIN-SUFFIX"
+          ]
+        }
+      ]
+    },
+    "binance": {
+      "parts": [
+        {
+          "source": "meta_binance"
+        },
+        {
+          "source": "old_binance",
+          "types": [
+            "DOMAIN",
+            "DOMAIN-SUFFIX"
+          ]
+        }
+      ]
+    },
+    "twitter": {
+      "parts": [
+        {
+          "source": "meta_twitter"
+        },
+        {
+          "source": "meta_xai"
+        },
+        {
+          "source": "old_twitter",
+          "types": [
+            "IP-CIDR"
+          ]
+        }
+      ]
+    },
+    "youtube": {
+      "parts": [
+        {
+          "source": "meta_youtube"
+        }
+      ]
+    },
+    "microsoft": {
+      "parts": [
+        {
+          "source": "meta_microsoft"
+        },
+        {
+          "source": "meta_bing"
+        },
+        {
+          "source": "meta_onedrive"
+        },
+        {
+          "source": "old_microsoft",
+          "types": [
+            "DOMAIN",
+            "DOMAIN-SUFFIX"
+          ]
+        }
+      ]
+    },
+    "xbox": {
+      "parts": [
+        {
+          "source": "meta_xbox"
+        }
+      ]
+    },
+    "epic": {
+      "parts": [
+        {
+          "source": "meta_epicgames"
+        }
+      ]
+    },
+    "origin": {
+      "parts": [
+        {
+          "source": "meta_ea"
+        },
+        {
+          "source": "old_origin",
+          "types": [
+            "DOMAIN",
+            "DOMAIN-SUFFIX"
+          ]
+        }
+      ]
+    },
+    "telegram": {
+      "parts": [
+        {
+          "source": "meta_telegram"
+        },
+        {
+          "source": "telegram_ipv4"
+        }
+      ]
+    },
+    "netflix": {
+      "parts": [
+        {
+          "source": "meta_netflix"
+        },
+        {
+          "source": "old_netflix",
+          "types": [
+            "IP-CIDR"
+          ]
+        }
+      ]
+    },
+    "china_domain": {
+      "parts": [
+        {
+          "source": "meta_cn"
+        }
+      ]
+    },
+    "proxy_foreign": {
+      "parts": [
+        {
+          "source": "meta_geolocation-!cn"
+        }
+      ]
+    },
+    "china_company_ip": {
+      "parts": [
+        {
+          "source": "china_ipv4"
+        }
+      ]
+    },
+    "china_exclusions": {
+      "parts": [
+        {
+          "source": "old_google",
+          "types": [
+            "DOMAIN",
+            "DOMAIN-SUFFIX",
+            "DOMAIN-KEYWORD",
+            "DOMAIN-REGEX"
+          ]
+        },
+        {
+          "source": "wbrokers",
+          "types": [
+            "DOMAIN",
+            "DOMAIN-SUFFIX",
+            "DOMAIN-KEYWORD",
+            "DOMAIN-REGEX"
+          ]
+        }
+      ]
+    }
+  }
+}

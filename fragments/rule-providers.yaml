@@ -1,13 +1,4 @@
 rule-providers:
-  lan:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/lan.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
-
   direct_custom:
     type: http
     behavior: classical
@@ -15,8 +6,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/direct_custom.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/direct.yaml
-
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/direct.yaml
   proxy_custom:
     type: http
     behavior: classical
@@ -24,8 +14,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/proxy_custom.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/proxy.yaml
-
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/proxy.yaml
   proxy_override:
     type: http
     behavior: classical
@@ -33,8 +22,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/proxy_override.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/proxy-override.yaml
-
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/proxy-override.yaml
   src_alone1:
     type: http
     behavior: classical
@@ -42,8 +30,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/src_alone1.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/src-alone1.yaml
-
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/src-alone1.yaml
   src_alone2:
     type: http
     behavior: classical
@@ -51,8 +38,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/src_alone2.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/src-alone2.yaml
-
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/src-alone2.yaml
   apple_push:
     type: http
     behavior: classical
@@ -60,8 +46,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/apple_push.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/apple-push.yaml
-
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/apple-push.yaml
   ad_allow:
     type: http
     behavior: classical
@@ -69,80 +54,7 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/ad_allow.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/ad-allow.yaml
-
-  ad_anti_ad:
-    type: http
-    behavior: domain
-    format: yaml
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/ad_anti_ad.yaml
-    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-clash.yaml
-
-  ai_openai:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/ai_openai.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
-
-  ai_anthropic:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/ai_anthropic.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml
-
-  google:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/google.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.yaml
-
-  github:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/github.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.yaml
-
-  bybit:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/bybit.yaml
-    url: https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/classical/bybit.yaml
-
-  binance:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/binance.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Binance/Binance.yaml
-
-  crypto:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/crypto.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Crypto.list
-
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/ad-allow.yaml
   wbrokers:
     type: http
     behavior: classical
@@ -150,184 +62,228 @@ rule-providers:
     interval: 86400
     proxy: 🚀 节点选择
     path: ./rule_provider/wbrokers.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/refs/heads/main/rules/wbrokers.yaml
-
-  twitter:
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/wbrokers.yaml
+  lan:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     proxy: 🚀 节点选择
-    path: ./rule_provider/twitter.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.yaml
-
-  steam_cn:
+    path: ./rule_provider/refactor/lan.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/lan.yaml
+  ad_anti_ad:
+    type: http
+    behavior: domain
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/ad_anti_ad.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/ad_anti_ad.yaml
+  bybit:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     proxy: 🚀 节点选择
-    path: ./rule_provider/steam_cn.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.yaml
-
+    path: ./rule_provider/refactor/bybit.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/bybit.yaml
+  crypto:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/crypto.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/crypto.yaml
+  google:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/google.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/google.yaml
+  google_fcm:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/google_fcm.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/google_fcm.yaml
+  apple:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/apple.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/apple.yaml
   steam:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     proxy: 🚀 节点选择
-    path: ./rule_provider/steam.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.yaml
-
-  xbox:
+    path: ./rule_provider/refactor/steam.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/steam.yaml
+  steam_cn:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     proxy: 🚀 节点选择
-    path: ./rule_provider/xbox.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Xbox/Xbox.yaml
-
-  epic:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/epic.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Epic/Epic.yaml
-
-  origin:
-    type: http
-    behavior: classical
-    format: yaml
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/origin.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Origin/Origin.yaml
-
+    path: ./rule_provider/refactor/steam_cn.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/steam_cn.yaml
   sony:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     proxy: 🚀 节点选择
-    path: ./rule_provider/sony.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Sony/Sony.yaml
-
+    path: ./rule_provider/refactor/sony.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/sony.yaml
   nintendo:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     proxy: 🚀 节点选择
-    path: ./rule_provider/nintendo.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.yaml
-
-  google_fcm:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/google_fcm.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
-
-  microsoft_bing:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/microsoft_bing.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Bing.list
-
-  microsoft_onedrive:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/microsoft_onedrive.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/OneDrive.list
-
-  microsoft:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/microsoft.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
-
-  apple:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/apple.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
-
-  telegram:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/telegram.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
-
-  youtube:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/youtube.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list
-
-  netflix:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/netflix.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
-
+    path: ./rule_provider/refactor/nintendo.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/nintendo.yaml
   proxy_gfwlist:
-    type: http
-    behavior: classical
-    format: text
-    interval: 86400
-    proxy: 🚀 节点选择
-    path: ./rule_provider/proxy_gfwlist.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
-
-  china:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     proxy: 🚀 节点选择
-    path: ./rule_provider/china.yaml
-    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/China/China.yaml
-
+    path: ./rule_provider/refactor/proxy_gfwlist.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/proxy_gfwlist.yaml
+  ai_openai:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/ai_openai.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/ai_openai.yaml
+  ai_anthropic:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/ai_anthropic.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/ai_anthropic.yaml
+  github:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/github.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/github.yaml
+  binance:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/binance.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/binance.yaml
+  twitter:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/twitter.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/twitter.yaml
+  youtube:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/youtube.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/youtube.yaml
+  microsoft:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/microsoft.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/microsoft.yaml
+  xbox:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/xbox.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/xbox.yaml
+  epic:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/epic.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/epic.yaml
+  origin:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/origin.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/origin.yaml
+  telegram:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/telegram.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/telegram.yaml
+  netflix:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/netflix.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/netflix.yaml
   china_domain:
     type: http
     behavior: classical
-    format: text
+    format: yaml
     interval: 86400
     proxy: 🚀 节点选择
-    path: ./rule_provider/china_domain.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list
-
+    path: ./rule_provider/refactor/china_domain.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/china_domain.yaml
+  proxy_foreign:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/proxy_foreign.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/proxy_foreign.yaml
   china_company_ip:
     type: http
     behavior: classical
-    format: text
+    format: yaml
     interval: 86400
     proxy: 🚀 节点选择
-    path: ./rule_provider/china_company_ip.list
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list
+    path: ./rule_provider/refactor/china_company_ip.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/china_company_ip.yaml
+  china_exclusions:
+    type: http
+    behavior: classical
+    format: yaml
+    interval: 86400
+    proxy: 🚀 节点选择
+    path: ./rule_provider/refactor/china_exclusions.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/china_exclusions.yaml

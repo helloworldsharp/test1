@@ -1,2 +1,4 @@
 /AGENTS.md
 /0nodeandscript/
+**/__pycache__/
+*.py[cod]

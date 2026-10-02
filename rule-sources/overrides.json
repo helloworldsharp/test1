@@ -1,0 +1,40 @@
+{
+  "ai_openai": {
+    "add": [
+      "DOMAIN,openai-api.arkoselabs.com"
+    ]
+  },
+  "binance": {
+    "remove": [
+      "DOMAIN-SUFFIX,appsflayer.com"
+    ]
+  },
+  "twitter": {
+    "add": [
+      "DOMAIN-SUFFIX,twimg.co",
+      "DOMAIN-SUFFIX,twimg.org"
+    ]
+  },
+  "youtube": {
+    "add": [
+      "DOMAIN-SUFFIX,gvt2.com"
+    ]
+  },
+  "microsoft": {
+    "remove": [
+      "DOMAIN-SUFFIX,akadns.net",
+      "DOMAIN-SUFFIX,edgesuite.net"
+    ]
+  },
+  "apple": {
+    "remove": [
+      "DOMAIN-SUFFIX,akadns.net",
+      "DOMAIN-SUFFIX,crashlytics.com"
+    ]
+  },
+  "nintendo": {
+    "remove": [
+      "IP-CIDR,35.192.0.0/12"
+    ]
+  }
+}
