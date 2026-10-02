@@ -24,14 +24,15 @@
 | PowerShell 与 diff | UI 脚本语法及两个 repository 的 diff check 通过 |
 | GitHub CI | [公共规则](https://github.com/helloworldsharp/test1/actions/runs/37037058447)与[Windows dingyue](https://github.com/helloworldsharp/proxy-rule-tools/actions/runs/37037049830)均通过；正式 publish job 为 skipped |
 | 开发 branch 读回 | 两仓库 branch/upstream 已建立；36 个 provider 的 Raw 内容与公共 commit 字节一致，两个 main 未改变 |
+| 旁路由现场内核 | 经授权隔离上传，alpha-g24b6de7 对真实候选的语法检查通过；独立进程加载全部 36 个 provider，条数与输入一致；活动配置 hash、原进程 PID/start tick 未变，测试进程与远端临时目录已清理 |
 
 测试命令见更新器 README 和 private dingyue README。私密候选与本地完整日志保存在项目外 backups，不进入公共 repository。
 
 ## 尚未完成的生产验收
 
-- 现场生产内核是 Mihomo Meta alpha-g24b6de7，与本地/CI 的 v1.19.32 不同；现场候选检查尚未执行。
+- 现场 alpha-g24b6de7 已完成隔离候选检查；这不构成接管流量后的真实业务验证。
 - 未合入生产 main，provider URL 仍指向开发 branch；生产稳定 URL 切换须与配置迁移一起验证。
-- 未 upload/activate/reload/restart；活动 OpenClash 的版本、数据、selector chain 与实际业务连接尚未以新候选验收。
+- 仅完成隔离目录 upload；未上传正式配置或 activate/reload/restart。活动 OpenClash 的版本、数据、selector chain 与实际业务连接尚未以新候选验收。
 - Stash 未实机导入；Verge 的候选必须在 OpenClash 启用后从实际 runtime 派生，当前未将旧 runtime 冒充新版本。
-- GitHub 正式自动发布及失败邮件设置/收件未启用或验证；配置文件存在不代表 schedule 已运行。
+- GitHub 正式自动发布未启用，失败邮件设置/收件未验证；浏览器通知设置页要求登录。用户已同意在生产验证及邮件实收确认后启用，条件尚未满足；配置文件存在不代表 schedule 已运行。
 - 已只读保存活动与 managed 配置、provider cache、GeoSite.dat、Country.mmdb、ASN.mmdb 和 22 个组的当前选择；生产迁移前仍需复核时效性，恢复操作尚未演练。磁盘快照不等于完整复现内核内存状态。
