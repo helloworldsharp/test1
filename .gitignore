@@ -2,3 +2,10 @@
 /0nodeandscript/
 **/__pycache__/
 *.py[cod]
+
+# Local audit, planning, and acceptance records (keep distribution READMEs/NOTICE)
+/docs/
+
+# Browser automation scratch output
+**/.playwright-cli/
+**/output/playwright/
