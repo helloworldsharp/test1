@@ -1,0 +1,3 @@
+rules/generated/* text eol=lf
+rule-sources/licenses/*.txt -text
+rule-sources/licenses/sources.json text eol=lf

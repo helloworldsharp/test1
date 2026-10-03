@@ -1,0 +1,22 @@
+{
+  "MetaCubeX-meta-rules-dat.txt": {
+    "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/master/LICENSE",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+  },
+  "blackmatrix7-ios_rule_script.txt": {
+    "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/LICENSE",
+    "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+  },
+  "ACL4SSR-ACL4SSR.txt": {
+    "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/LICENCE",
+    "sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297"
+  },
+  "privacy-protection-tools-anti-AD.txt": {
+    "url": "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/LICENSE",
+    "sha256": "e38459549a64f11ecf1477053768ef89eb2939a9aa5573f51a31461086357a34"
+  },
+  "gaoyifan-china-operator-ip.txt": {
+    "url": "https://raw.githubusercontent.com/gaoyifan/china-operator-ip/master/LICENSE",
+    "sha256": "8f4d03a581484143945a9fac471c3b669d5aada68361fd1f25886c3ddbdd786a"
+  }
+}
