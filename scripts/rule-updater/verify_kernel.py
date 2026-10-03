@@ -73,9 +73,12 @@ def wait_for_routing(port, log_path):
     raise TimeoutError("Mihomo tunnel did not become ready for routing")
 
 
-def cases():
+def cases(candidate):
     direct, main = "🎯 全球直连", "🚀 节点选择"
     values = []
+    voice_ips = [str(ipaddress.ip_network(rule.split(",")[1]).network_address)
+                 for rule in load(candidate / "ai_openai.yaml")["payload"]
+                 if rule.startswith("IP-CIDR,")]
     for source, device in [("127.0.0.1", None), ("127.0.0.2", "📱 指定设备1"), ("127.0.0.3", "🖱️ 指定设备2")]:
         for host, group in [
             ("baidu.com", direct), ("1.2.4.8", direct), ("192.168.50.1", direct),
@@ -99,6 +102,15 @@ def cases():
             ("bybit.com", device or "💶 Bybit"), ("bybit-exchange.github.io", device or "💶 Bybit"),
             ("binance.com", device or "🪙 BNQ"), ("tradingview.com", device or "🪙 BNQ"),
             ("chatgpt.com", device or "🤖 AI"), ("claudeusercontent.com", device or "🤖 AI"),
+            ("cdn.openaimerge.com", device or "🤖 AI"), ("cdn.workos.com", device or "🤖 AI"),
+            ("forwarder.workos.com", device or "🤖 AI"), ("setup.workos.com", device or "🤖 AI"),
+            ("images.workoscdn.com", device or "🤖 AI"), ("workos.imgix.net", device or "🤖 AI"),
+            ("claude.dev", device or "🤖 AI"), ("docs.claude.dev", device or "🤖 AI"),
+            ("160.79.104.0", device or "🤖 AI"), ("160.79.105.255", device or "🤖 AI"),
+            ("160.79.106.1", device or "🐟 漏网之鱼"),
+            ("unrelated.workos.com", device or "🐟 漏网之鱼"),
+            ("unrelated.workoscdn.com", device or "🐟 漏网之鱼"),
+            ("cdn.workos.com.unrelated.invalid", device or "🐟 漏网之鱼"),
             ("github.com", device or main), ("objects.githubusercontent.com", device or main),
             ("t.me", device or main), ("91.105.192.1", device or main),
             ("xbox.com", device or "🎮 其他游戏平台"), ("ea.com", device or "🎮 其他游戏平台"),
@@ -109,6 +121,7 @@ def cases():
             ("not-in-any-list-6a03.invalid", device or "🐟 漏网之鱼"),
         ]:
             values.append((source, host, group))
+        values.extend((source, host, device or "🤖 AI") for host in voice_ips)
     return values
 
 
@@ -164,7 +177,7 @@ def run(root, candidate, binary, evidence, mutate=None, dns_contract=False):
                 home = Path(temporary)
                 port = free_port()
                 config = prepare(root, candidate, home, port, dns.server_address[1], mutate)
-                selected_cases = cases()
+                selected_cases = cases(candidate)
                 if mutate == "google-refresh":
                     selected_cases += [(source, "audit-new-service.cn", group) for source, group in
                                        [("127.0.0.1", "🍀 Google相关"), ("127.0.0.2", "📱 指定设备1"),
@@ -243,6 +256,8 @@ def run(root, candidate, binary, evidence, mutate=None, dns_contract=False):
                                 time.sleep(.05)
                             dns_queries = dns.queries - queries_before
                             passed = f"using {expected}[REJECT]" in observed
+                            if expected == "🤖 AI" and host.replace(".", "").isdigit():
+                                passed = passed and dns_queries == 0
                             if host.endswith(".domestic-fixture.invalid"):
                                 passed = passed and dns_queries > 0
                             if dns_contract:

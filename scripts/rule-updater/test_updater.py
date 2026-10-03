@@ -7,6 +7,26 @@ import updater
 
 
 class UpdaterTests(unittest.TestCase):
+    def test_official_voice_prefixes_are_ipv4_no_resolve_and_deduplicated(self):
+        body = json.dumps({"creationTime": "2026-03-26", "prefixes": [
+            {"ipv4Prefix": "102.37.57.54/32"}, {"ipv6Prefix": "2001:db8::/32"},
+            {"ipv4Prefix": "102.37.57.54/32"}]}).encode()
+        self.assertEqual(updater.parse(body, "json-prefixes", "ipcidr"),
+                         ["IP-CIDR,102.37.57.54/32,no-resolve"])
+
+    def test_malformed_official_voice_data_fails_closed(self):
+        for data in [{}, {"prefixes": []}, {"prefixes": [{}]},
+                     {"prefixes": [{"ipv4Prefix": "not-an-ip"}]},
+                     {"prefixes": [{"ipv4Prefix": "2001:db8::/32"}]},
+                     {"prefixes": [{"ipv6Prefix": "192.0.2.1/32"}]},
+                     {"prefixes": [{"ipv4Prefix": "192.0.2.1"}]},
+                     {"prefixes": [{"ipv4Prefix": "192.0.2.1/24"}]},
+                     {"prefixes": [{"ipv4Prefix": "192.0.2.1/32", "unknown": True}]}]:
+            with self.subTest(data=data), self.assertRaises(ValueError):
+                updater.parse(json.dumps(data).encode(), "json-prefixes", "ipcidr")
+        with self.assertRaises(ValueError):
+            updater.parse(b'{"prefixes":[{"ipv4Prefix":"192.0.2.1/32"}]}', "json-prefixes", "classical")
+
     def test_only_explicit_ip_source_can_request_resolution(self):
         body = b"1.2.4.0/24\n2001:db8::/32\n"
         self.assertEqual(updater.parse(body, "text", "ipcidr"), ["IP-CIDR,1.2.4.0/24,no-resolve"])
@@ -65,6 +85,20 @@ class UpdaterTests(unittest.TestCase):
                     raise TimeoutError("controlled download failure")
                 return delegate(url)
             with self.assertRaises(TimeoutError):
+                updater.build(root, root / "candidate", fetch)
+            self.assertFalse((root / "candidate").exists())
+
+    def test_malformed_voice_source_cannot_publish_partial_candidate(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            delegate = self.fixture(root)
+            path = root / "rule-sources/sources.json"
+            manifest = json.loads(path.read_text())
+            manifest["sources"]["b"].update(format="json-prefixes", behavior="ipcidr")
+            path.write_text(json.dumps(manifest))
+            def fetch(url):
+                return b'{"prefixes":[{"ipv4Prefix":"bad"}]}' if url.endswith("b.list") else delegate(url)
+            with self.assertRaises(ValueError):
                 updater.build(root, root / "candidate", fetch)
             self.assertFalse((root / "candidate").exists())
 

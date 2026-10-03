@@ -10,5 +10,8 @@ generated 数据来自以下公开项目及本仓库个人补充。每轮确切 
 | [privacy-protection-tools/anti-AD](https://github.com/privacy-protection-tools/anti-AD) | 广告域名 | [LICENSE](https://github.com/privacy-protection-tools/anti-AD/blob/master/LICENSE) |
 | [gaoyifan/china-operator-ip](https://github.com/gaoyifan/china-operator-ip) | 国内 IPv4 | [LICENSE](https://github.com/gaoyifan/china-operator-ip/blob/master/LICENSE) |
 | [Telegram 官方 CIDR](https://core.telegram.org/resources/cidr.txt) | Telegram IPv4 网络 | 官方公开网络列表，来源链接与 hash 保留 |
+| [OpenAI 官方 Voice IP](https://openai.com/chatgpt-voice.json) | ChatGPT Voice IPv4，组合进 OpenAI provider | 官方公开网络列表，来源链接与 hash 保留；用途见[网络说明](https://help.openai.com/en/articles/9247338-network-recommendations-for-chatgpt-errors-on-web-and-apps) |
+
+个人 AI 补充依据 OpenAI 上述网络说明中的精确 CDN/WorkOS 端点、[Anthropic 官方入站地址](https://platform.claude.com/docs/en/api/ip-addresses)及上游已收录的[claude.dev](https://github.com/v2fly/domain-list-community/pull/4114)。这些补充在 overrides.json 维护，不扩大共享平台、ASN 或 Anthropic MCP 出站网段。
 
 根许可证原文副本在 licenses/；聚合项目的根许可证不自动消除底层来源要求。对外分发仍须保留相应来源、修改说明和适用条款，不声称官方为本仓库路由分类背书。

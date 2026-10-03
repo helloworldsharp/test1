@@ -69,6 +69,21 @@ def parse(body, fmt, behavior, *, no_resolve=True):
     elif fmt == "text":
         values = [line.strip() for line in text.splitlines()
                   if line.strip() and not line.lstrip().startswith(("#", ";", "//"))]
+    elif fmt == "json-prefixes":
+        data = json.loads(text)
+        if behavior != "ipcidr" or not isinstance(data, dict) or not isinstance(data.get("prefixes"), list):
+            raise ValueError("JSON prefixes require an ipcidr source and a prefixes list")
+        values = []
+        for entry in data["prefixes"]:
+            if not isinstance(entry, dict) or len(entry) != 1 or not set(entry) <= {"ipv4Prefix", "ipv6Prefix"}:
+                raise ValueError("invalid JSON prefix entry")
+            key, value = next(iter(entry.items()))
+            if not isinstance(value, str) or "/" not in value:
+                raise ValueError("JSON prefix must be a CIDR string")
+            net = ipaddress.ip_network(value, strict=True)
+            if net.version != (4 if key == "ipv4Prefix" else 6):
+                raise ValueError("JSON prefix address family mismatch")
+            values.append(value)
     else:
         raise ValueError(f"unsupported input format: {fmt}")
     if not isinstance(values, list) or not values:

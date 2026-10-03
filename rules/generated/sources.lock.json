@@ -184,6 +184,11 @@
       "url": "https://core.telegram.org/resources/cidr.txt",
       "sha256": "3ecd072cedf72eceee6961b18a51e37f905d5ce4a656a5d24cf5fea63e6ec651",
       "rules": 9
+    },
+    "openai_voice_ipv4": {
+      "url": "https://openai.com/chatgpt-voice.json",
+      "sha256": "8f03f3c594165eeff009915c7e2beb4bdfb9d429fb1955c205e3b33ec781899a",
+      "rules": 23
     }
   },
   "outputs": {
@@ -297,20 +302,22 @@
       }
     },
     "ai_openai": {
-      "rules": 24,
-      "sha256": "a27d06c569f81685339746ee42ee5f602e64afd2c7b2edc4acc161673a381f08",
+      "rules": 53,
+      "sha256": "7eec9eee868258a15d87104d61803b841554422ff753531e421284c049d53fe6",
       "types": {
-        "DOMAIN": 10,
+        "DOMAIN": 16,
         "DOMAIN-REGEX": 1,
-        "DOMAIN-SUFFIX": 13
+        "DOMAIN-SUFFIX": 13,
+        "IP-CIDR": 23
       }
     },
     "ai_anthropic": {
-      "rules": 8,
-      "sha256": "ab371ddaea4fbf4d5dfe4874980031ea0dca1c3636fbe747078d77f4af95d8cd",
+      "rules": 10,
+      "sha256": "e1f6f1e2ccb213b80dd0a3ddb80c61c93acfdc4b3d5c3c48edec598303f2263f",
       "types": {
         "DOMAIN": 1,
-        "DOMAIN-SUFFIX": 7
+        "DOMAIN-SUFFIX": 8,
+        "IP-CIDR": 1
       }
     },
     "github": {

@@ -14,7 +14,19 @@
   },
   "ai_openai": {
     "add": [
-      "DOMAIN,openai-api.arkoselabs.com"
+      "DOMAIN,openai-api.arkoselabs.com",
+      "DOMAIN,cdn.openaimerge.com",
+      "DOMAIN,cdn.workos.com",
+      "DOMAIN,forwarder.workos.com",
+      "DOMAIN,setup.workos.com",
+      "DOMAIN,images.workoscdn.com",
+      "DOMAIN,workos.imgix.net"
+    ]
+  },
+  "ai_anthropic": {
+    "add": [
+      "DOMAIN-SUFFIX,claude.dev",
+      "IP-CIDR,160.79.104.0/23,no-resolve"
     ]
   },
   "binance": {

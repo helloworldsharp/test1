@@ -257,6 +257,11 @@
       "url": "https://core.telegram.org/resources/cidr.txt",
       "format": "text",
       "behavior": "ipcidr"
+    },
+    "openai_voice_ipv4": {
+      "url": "https://openai.com/chatgpt-voice.json",
+      "format": "json-prefixes",
+      "behavior": "ipcidr"
     }
   },
   "outputs": {
@@ -370,6 +375,9 @@
       "parts": [
         {
           "source": "meta_openai"
+        },
+        {
+          "source": "openai_voice_ipv4"
         }
       ]
     },

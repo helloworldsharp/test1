@@ -22,6 +22,10 @@ python scripts/rule-updater/verify_kernel.py --candidate <候选目录> --mihomo
 
 `overrides.json` 的 `add`/`remove` 只处理明确条目；删除项已被上游移除时报告 stale removal，要求复核，避免过期意图悄悄失效。它不是无限域名集合减法。BNQ/Bybit 与国内例外使用 fragments 中的明确逻辑规则保障最终路由。
 
+AI 补充仍使用现有 `ai_openai`/`ai_anthropic` provider。OpenAI 的6个精确 CDN/WorkOS 端点、`claude.dev` 和 Anthropic 官方入站 IPv4 `160.79.104.0/23,no-resolve` 在 `overrides.json` 维护；共享平台不扩大为整个 suffix，Anthropic 的出站 MCP 网段不作为客户端目的地址补入。
+
+ChatGPT Voice IPv4 从官方 `https://openai.com/chatgpt-voice.json` 获取，声明为 `json-prefixes`/`ipcidr` 来源并组合进 `ai_openai`；不在 overrides 手抄当前 IP。解析要求非空 `prefixes` 列表，每项为单个 `ipv4Prefix` 或 `ipv6Prefix` CIDR，校验地址族和网络边界；过滤 IPv6，IPv4 默认附加 no-resolve。异常数据使整轮构建失败，保留 last-good 产物。来源更新沿用同一轮下载、hash、变化阈值和发布 gate。
+
 更新器全部来源和转换通过后才建立新候选目录，拒绝覆盖已有目录；网络/解析失败不写正式产物。I/O 失败可能留下不完整候选，不能发布，可复核后清理。相同输入输出一致，正文无变化保留上次内容变化时的 receipt，不因上游每日生成时间制造 commit。
 
 相对当前 generated 基线，每个输出默认最多删除 20%（小集容许 5 条）或增长 50%（小集容许 100 条）；同时受 min_rules/max_rules 限制。异常变化要求复核 sources 定义，不自动回退、拼接旧新来源或吞掉失败。这些阈值不替代路由行为验证。
@@ -30,11 +34,11 @@ generated 文件通过 .gitattributes 固定 LF，避免 Windows checkout 的换
 
 ## 验证证明范围
 
-内核加载本轮本地候选，等全部 provider 初始化完成后检查 141 个明确场景；source-device fixture 使用三个回环地址。受控 DNS 默认返回文档地址 `192.0.2.123`，国内 fixture 返回 `1.2.4.8`；验证域名解析后的国内直连、裸 IP、Google/券商排除、下载与服务归属。另有两例控制 DNS 查询的 no-resolve 验证。出口全部 REJECT，真实互联网服务不会收到测试连接。
+内核加载本轮本地候选，等全部 provider 初始化完成后检查基础路由、AI 补充域名、Anthropic 网段内外边界及候选中每个 OpenAI Voice IPv4 网段的代表地址；当前23条语音IP时共252个场景。source-device fixture 使用三个回环地址，同时验证普通来源进入 AI、指定设备继续使用设备组、共享 WorkOS 后缀不被整体接管。受控 DNS 默认返回文档地址 `192.0.2.123`，国内 fixture 返回 `1.2.4.8`；验证域名解析后的国内直连、裸 IP、Google/券商排除、下载与服务归属。另有两例控制 DNS 查询的 no-resolve 验证。出口全部 REJECT，真实互联网服务不会收到测试连接；语音 UDP、节点能力和真实登录仍须实机验证。
 
 `--mutate bnq-shadow`、`--mutate devices-first`、`--mutate override-unguarded` 应返回非零并产生完整 report.json，分别检出 Bybit 被 Crypto 接走、设备规则抢在直连前和代理例外失去设备保护。只有测试副本被变更。
 
-`--mutate google-refresh` 应成功通过 144 个场景：只在 Google provider 增加一个 `.cn` 服务域名，其余缓存保持旧版，三个来源均不得被国内直连接走。四种 mutation 均在 CI 中执行。按服务归属和设备保护的细节由这些真实内核场景检查；dingyue offline validator 只负责语法、引用、默认候选和通用顺序边界，不是完整策略解释器。
+`--mutate google-refresh` 应成功通过上述场景及3个新增场景：只在 Google provider 增加一个 `.cn` 服务域名，其余缓存保持旧版，三个来源均不得被国内直连接走。四种 mutation 均在 CI 中执行。按服务归属和设备保护的细节由这些真实内核场景检查；dingyue offline validator 只负责语法、引用、默认候选和通用顺序边界，不是完整策略解释器。
 
 原策略组用合成节点做语法检查，行为测试把各组出口换为 REJECT 来观察匹配组；实际 selector chain、节点健康、默认选择及 Stash/Verge 的实机功能仍待对应客户端验收。
 
