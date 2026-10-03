@@ -50,6 +50,8 @@
 | 来源回放 | 37 个原始内容 hash 一致，按当前正式基线再次生成的所有文件字节一致；国内 IPv4 范围仍为原 6205 段 |
 | 跨仓库组装 | 合成节点经 BuildBundle 生成 final（36 providers/18 groups）及 Stash（32/15），离线引用/默认选择与本地 Mihomo 语法检查通过；不等于 Stash 实机验收 |
 
+首次修复 CI 暴露了两个环境差异并补充修正：Windows CP1252 无法输出中文提示（已本地复现，CLI 统一 UTF-8 并在测试中显式使用 CP1252 stream）；Linux 首个内核请求可能早于 tunnel Running（固定版本源码确认启动顺序，加入独立路由就绪探针，不重试正式用例）。
+
 本轮未重新上传或测试旁路由、未生成真实订阅候选、未实机导入 Stash/Verge。新旧 provider 职责不能混用，须从当前 fragments 重新生成候选。相关证据保留在项目外 `backups/proxy-rule/20261003-routing-fixes`；本 commit 的远端 CI 以实际 run 结果为准，以上历史 CI 链接不替代本次检查。
 
 ## 尚未完成的生产验收

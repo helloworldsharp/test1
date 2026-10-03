@@ -38,6 +38,8 @@ generated 文件通过 .gitattributes 固定 LF，避免 Windows checkout 的换
 
 原策略组用合成节点做语法检查，行为测试把各组出口换为 REJECT 来观察匹配组；实际 selector chain、节点健康、默认选择及 Stash/Verge 的实机功能仍待对应客户端验收。
 
+启动检查除了 listener 与 provider 条数，还等待一个独立回环请求产生匹配日志；Mihomo 在 provider 初始化后才将 tunnel 设为 Running。就绪探针允许在 30 秒内轮询，实际行为用例仍各执行一次，避免启动竞态吞掉首个用例或重试掩盖路由失败。
+
 ## CI 与发布
 
 `.github/workflows/rules.yml` 在 push/PR 验证已提交产物；schedule/workflow_dispatch 获取上游并生成候选，执行 unit、内核与故障注入检查。schedule 为每天 UTC 00:47（北京时间 08:47），只有默认 branch 的定时工作流会运行。

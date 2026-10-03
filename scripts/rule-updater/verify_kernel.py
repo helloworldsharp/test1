@@ -43,6 +43,36 @@ def free_port():
         return sock.getsockname()[1]
 
 
+def send_connect(port, source, destination):
+    with socket.socket() as sock:
+        sock.settimeout(3)
+        sock.bind((source, 0))
+        sock.connect(("127.0.0.1", port))
+        sock.sendall(f"CONNECT {destination} HTTP/1.1\r\nHost: {destination}\r\n\r\n".encode())
+        try:
+            sock.recv(4096)
+        except (OSError, TimeoutError):
+            pass
+
+
+def wait_for_routing(port, log_path):
+    # Mihomo opens listeners and loads providers before tunnel.OnRunning().
+    # Provider counts alone can be ready while the tunnel still drops requests.
+    destination = "192.0.2.254:19000"
+    deadline = time.monotonic() + 30
+    probes = 0
+    while time.monotonic() < deadline:
+        probes += 1
+        send_connect(port, "127.0.0.1", destination)
+        probe_deadline = min(deadline, time.monotonic() + .5)
+        while time.monotonic() < probe_deadline:
+            lines = log_path.read_text(encoding="utf-8", errors="replace").splitlines()
+            if any(destination in line and "match " in line for line in lines):
+                return probes
+            time.sleep(.05)
+    raise TimeoutError("Mihomo tunnel did not become ready for routing")
+
+
 def cases():
     direct, main = "🎯 全球直连", "🚀 节点选择"
     values = []
@@ -198,18 +228,11 @@ def run(root, candidate, binary, evidence, mutate=None, dns_contract=False):
                                               for name, count in expected_counts.items() if ready.get(name, {}).get("ruleCount", 0) != count}
                                 raise TimeoutError(f"rule providers incomplete or rules were rejected: {mismatches}")
                             time.sleep(.1)
+                        readiness_probes = wait_for_routing(port, log_path)
                         for index, (source, host, expected) in enumerate(selected_cases):
                             queries_before = dns.queries
                             destination = f"{host}:{20000 + index}"
-                            with socket.socket() as sock:
-                                sock.settimeout(3)
-                                sock.bind((source, 0))
-                                sock.connect(("127.0.0.1", port))
-                                sock.sendall(f"CONNECT {destination} HTTP/1.1\r\nHost: {destination}\r\n\r\n".encode())
-                                try:
-                                    sock.recv(4096)
-                                except (OSError, TimeoutError):
-                                    pass
+                            send_connect(port, source, destination)
                             deadline = time.monotonic() + 3
                             observed = ""
                             while time.monotonic() < deadline:
@@ -236,7 +259,7 @@ def run(root, candidate, binary, evidence, mutate=None, dns_contract=False):
                             process.wait(timeout=5)
                 report = {"kernel":subprocess.check_output([str(binary), "-v"]).decode(errors="replace").strip(),
                           "scope":"isolated loopback first-match; all outbounds REJECT; not real service connectivity",
-                          "mutate":mutate, "dns_queries":dns.queries, "cases":results}
+                          "mutate":mutate, "readiness_probes":readiness_probes, "dns_queries":dns.queries, "cases":results}
                 (evidence / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
                 failures = sum(not case["passed"] for case in results)
                 print(json.dumps({"cases":len(results), "failures":failures, "evidence":str(evidence)}))
