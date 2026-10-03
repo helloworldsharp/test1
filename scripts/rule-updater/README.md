@@ -18,6 +18,8 @@ python scripts/rule-updater/verify_kernel.py --candidate <候选目录> --mihomo
 
 `sources.json` 声明 GitHub repo/ref/path 或 HTTPS 来源以及实际格式；同一 repo/ref 每轮解析一次 commit。只接受实际实现并验证的 domain/classical/IP 类型，未知类型直接失败。输出按 `parts` 组合，可按类型保留旧来源 IPv4 或专用域名。
 
+纯 IP 来源默认附加 no-resolve；国内 IPv4 来源显式设置 `no_resolve: false`，让未命中国内域名集的请求能根据 DNS 结果在设备分流前分类。其他 IP 来源不随之改变。Google 域名和非域名规则分开输出，国内排除复用服务侧的域名 provider，避免复制排除集的缓存版本差异。
+
 `overrides.json` 的 `add`/`remove` 只处理明确条目；删除项已被上游移除时报告 stale removal，要求复核，避免过期意图悄悄失效。它不是无限域名集合减法。BNQ/Bybit 与国内例外使用 fragments 中的明确逻辑规则保障最终路由。
 
 更新器全部来源和转换通过后才建立新候选目录，拒绝覆盖已有目录；网络/解析失败不写正式产物。I/O 失败可能留下不完整候选，不能发布，可复核后清理。相同输入输出一致，正文无变化保留上次内容变化时的 receipt，不因上游每日生成时间制造 commit。
@@ -28,9 +30,11 @@ generated 文件通过 .gitattributes 固定 LF，避免 Windows checkout 的换
 
 ## 验证证明范围
 
-内核加载本轮本地候选，等全部 provider 初始化完成后检查 105 个明确场景； source-device fixture 使用三个回环地址。另有两例控制 DNS 查询的 no-resolve 验证。出口全部 REJECT，真实互联网服务不会收到测试连接。
+内核加载本轮本地候选，等全部 provider 初始化完成后检查 141 个明确场景；source-device fixture 使用三个回环地址。受控 DNS 默认返回文档地址 `192.0.2.123`，国内 fixture 返回 `1.2.4.8`；验证域名解析后的国内直连、裸 IP、Google/券商排除、下载与服务归属。另有两例控制 DNS 查询的 no-resolve 验证。出口全部 REJECT，真实互联网服务不会收到测试连接。
 
-`--mutate bnq-shadow`、`--mutate devices-first` 应返回非零并产生完整 report.json，分别证明 Bybit 被 Crypto 接走、设备规则抢在直连前能够被发现。只有测试副本被变更。
+`--mutate bnq-shadow`、`--mutate devices-first`、`--mutate override-unguarded` 应返回非零并产生完整 report.json，分别检出 Bybit 被 Crypto 接走、设备规则抢在直连前和代理例外失去设备保护。只有测试副本被变更。
+
+`--mutate google-refresh` 应成功通过 144 个场景：只在 Google provider 增加一个 `.cn` 服务域名，其余缓存保持旧版，三个来源均不得被国内直连接走。四种 mutation 均在 CI 中执行。按服务归属和设备保护的细节由这些真实内核场景检查；dingyue offline validator 只负责语法、引用、默认候选和通用顺序边界，不是完整策略解释器。
 
 原策略组用合成节点做语法检查，行为测试把各组出口换为 REJECT 来观察匹配组；实际 selector chain、节点健康、默认选择及 Stash/Verge 的实机功能仍待对应客户端验收。
 

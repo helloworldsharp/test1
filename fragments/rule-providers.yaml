@@ -279,11 +279,11 @@ rule-providers:
     proxy: 🚀 节点选择
     path: ./rule_provider/refactor/china_company_ip.yaml
     url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/china_company_ip.yaml
-  china_exclusions:
+  google_non_domain:
     type: http
     behavior: classical
     format: yaml
     interval: 86400
     proxy: 🚀 节点选择
-    path: ./rule_provider/refactor/china_exclusions.yaml
-    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/china_exclusions.yaml
+    path: ./rule_provider/refactor/google_non_domain.yaml
+    url: https://raw.githubusercontent.com/helloworldsharp/test1/codex/routing-refactor/rules/generated/google_non_domain.yaml

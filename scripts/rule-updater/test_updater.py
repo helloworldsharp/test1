@@ -7,6 +7,11 @@ import updater
 
 
 class UpdaterTests(unittest.TestCase):
+    def test_only_explicit_ip_source_can_request_resolution(self):
+        body = b"1.2.4.0/24\n2001:db8::/32\n"
+        self.assertEqual(updater.parse(body, "text", "ipcidr"), ["IP-CIDR,1.2.4.0/24,no-resolve"])
+        self.assertEqual(updater.parse(body, "text", "ipcidr", no_resolve=False), ["IP-CIDR,1.2.4.0/24"])
+
     def test_preserves_regex_commas_and_rejects_unknown_types(self):
         rules = updater.parse(b"payload:\n - 'DOMAIN-REGEX,^x[0-9]{1,3}\\.com$'\n", "yaml", "classical")
         self.assertEqual(rules, [r"DOMAIN-REGEX,^x[0-9]{1,3}\.com$"])

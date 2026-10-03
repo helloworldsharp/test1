@@ -184,11 +184,6 @@
       "url": "https://core.telegram.org/resources/cidr.txt",
       "sha256": "3ecd072cedf72eceee6961b18a51e37f905d5ce4a656a5d24cf5fea63e6ec651",
       "rules": 9
-    },
-    "wbrokers": {
-      "url": "rules/wbrokers.yaml",
-      "sha256": "65732286453909278a15554d0185daed7545657e2f80b71747438a671ed01385",
-      "rules": 59
     }
   },
   "outputs": {
@@ -227,12 +222,18 @@
       }
     },
     "google": {
-      "rules": 700,
-      "sha256": "4764caa25466fccc29dbb63ce8f8ddcd260d4d07e1c366873c28edac0f62cf28",
+      "rules": 690,
+      "sha256": "75ecf588e80dfe6d73256c65a016d9af1af679b09a0c25893ffad6fa00817365",
       "types": {
         "DOMAIN": 1,
         "DOMAIN-KEYWORD": 5,
-        "DOMAIN-SUFFIX": 684,
+        "DOMAIN-SUFFIX": 684
+      }
+    },
+    "google_non_domain": {
+      "rules": 10,
+      "sha256": "bae6e0b5c6f157ffb334e3aef286159157f1182253820159dcb69a8a83afc1c4",
+      "types": {
         "IP-CIDR": 4,
         "PROCESS-NAME": 6
       }
@@ -354,11 +355,11 @@
       }
     },
     "xbox": {
-      "rules": 45,
-      "sha256": "f01896d798bc6cce780f160b6efeb158331a0c49721bfb3812e204862ed8e940",
+      "rules": 46,
+      "sha256": "f358b5597d59d5f15f95d6f01dc3a97fb56903f9098708900099f37cd7eb5773",
       "types": {
         "DOMAIN": 2,
-        "DOMAIN-SUFFIX": 43
+        "DOMAIN-SUFFIX": 44
       }
     },
     "epic": {
@@ -396,10 +397,10 @@
       }
     },
     "china_domain": {
-      "rules": 111224,
-      "sha256": "a43e272fe76e3048aea4b5b947b35dbf5fd4cb739bd40d8120700aae4d45e19d",
+      "rules": 111228,
+      "sha256": "c89884404379105c1f1683292cf696b26ad3240490edb1999639a0fc11c4ea5a",
       "types": {
-        "DOMAIN-SUFFIX": 111224
+        "DOMAIN-SUFFIX": 111228
       }
     },
     "proxy_foreign": {
@@ -413,18 +414,9 @@
     },
     "china_company_ip": {
       "rules": 6205,
-      "sha256": "540161bbdfc21769115c226ce18c37547e29e5c8b162ecec075a1446e19bcf37",
+      "sha256": "6d6cf0d757877094b35925a56410afea2d9be3322b8e704f4b3296f1f3d36761",
       "types": {
         "IP-CIDR": 6205
-      }
-    },
-    "china_exclusions": {
-      "rules": 749,
-      "sha256": "4f89c3a4618a21c6c9c50b70ded496e223b05a960d8d5f621f72969f811c829d",
-      "types": {
-        "DOMAIN": 1,
-        "DOMAIN-KEYWORD": 5,
-        "DOMAIN-SUFFIX": 743
       }
     }
   }

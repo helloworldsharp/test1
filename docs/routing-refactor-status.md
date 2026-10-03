@@ -7,10 +7,12 @@
 - 分组精简、BNQ/Bybit 显式隔离、国内域名/IP来源统一、Google/券商排除，以及全部第三方数据的受控生成。
 - 28 个 generated provider、8 个个人 provider、18 个策略组；个人源文件保持不变。
 - 更新器拒绝未知类型/异常空集/过量增删，冻结每轮来源 commit，失败不发布；连续两次下载生成的全部产物字节一致。
-- dingyue 支持独立 rules root，冻结本地规则数据，隔离 subconverter 副本；Stash 清理嵌套设备引用、处理默认选择并原子写入。
+- dingyue 支持独立 rules root，校验本地规则构建期间未变，隔离 subconverter 副本；Stash 清理嵌套设备引用、处理默认选择并原子写入。HTTP 正文仍由客户端按 URL 下载。
 - 已写 CI，包括日常更新候选、内核行为检查、故障注入和受限发布 job；默认未启用正式发布。
 
-## 验证证据
+## 初始候选的历史验证
+
+以下为独立审计前的记录，不代表后续修复已经进行现场或真实业务验收。
 
 | 检查 | 结果与范围 |
 | --- | --- |
@@ -27,6 +29,28 @@
 | 旁路由现场内核 | 经授权隔离上传，alpha-g24b6de7 对真实候选的语法检查通过；独立进程加载全部 36 个 provider，条数与输入一致；活动配置 hash、原进程 PID/start tick 未变，测试进程与远端临时目录已清理 |
 
 测试命令见更新器 README 和 private dingyue README。私密候选与本地完整日志保存在项目外 backups，不进入公共 repository。
+
+## 独立审计后的修复与本地验证
+
+修复基线：公共 `d46aa070`，private tools `b25d8861`。修复使用原 receipt 的 37 份公开来源字节，逐一核对 SHA-256；未混入本轮新上游数据。国内 6205 段 IPv4 范围完全不变，仅取消该分类路径的 no-resolve。首次迁移在隔离生成目录省略旧 IP 正文基线，以允许这次已审查的全量 flag 变化；正式更新器的删除阈值保持原值。
+
+- 恢复未分类域名经 DNS 解析后的国内 IPv4 直连，并保持 Google/券商排除和设备优先级。
+- 补回五个已复现的旧直连/下载范围，去除整个 `.ms` 国内分类，将 `msgamestudios.com` 放回游戏组。补充仅保留具体范围，尚未证明真实业务质量。
+- 取消重复的 `china_exclusions`；Google 域名 provider 同时用于服务与国内排除。原 Google 4 段 IPv4、6 条 process 规则在 `google_non_domain` 保留，仍位于设备之后。8 个个人 provider 文件未改。
+- final 的动态 URL 机制保持；构建显式提示本地正文未嵌入。不存在的 default-selected 在 final 与 Stash 转换前被拒绝，失败保留既有成功文件。
+
+| 检查 | 修复后的结果与边界 |
+| --- | --- |
+| 回归先失败 | 修复前内核新增用例检出 31 个错误决策；工具新增用例检出默认节点漏检与缺少正文提示 |
+| 公共 unit tests | 10 项通过，包括仅显式国内 IP 来源启用解析，其他来源 no-resolve 保持 |
+| private ProjectVerifier | 95 项通过；新增缺失默认候选失败保留、include-all 展开及正文提示场景 |
+| Mihomo v1.19.32 | 141 个 first-match 与 2 个 DNS/no-resolve 场景通过；全部为回环 DNS、REJECT 出口 |
+| 单 provider 刷新 | 仅 Google 增加 `.cn` 域名，其余缓存保持旧版，144 个场景通过 |
+| 故障注入 | Bybit 遮蔽检出 1 例；设备抢先检出 30 例；代理例外缺少设备保护检出 2 例 |
+| 来源回放 | 37 个原始内容 hash 一致，按当前正式基线再次生成的所有文件字节一致；国内 IPv4 范围仍为原 6205 段 |
+| 跨仓库组装 | 合成节点经 BuildBundle 生成 final（36 providers/18 groups）及 Stash（32/15），离线引用/默认选择与本地 Mihomo 语法检查通过；不等于 Stash 实机验收 |
+
+本轮未重新上传或测试旁路由、未生成真实订阅候选、未实机导入 Stash/Verge。新旧 provider 职责不能混用，须从当前 fragments 重新生成候选。相关证据保留在项目外 `backups/proxy-rule/20261003-routing-fixes`；本 commit 的远端 CI 以实际 run 结果为准，以上历史 CI 链接不替代本次检查。
 
 ## 尚未完成的生产验收
 

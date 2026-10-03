@@ -9879,6 +9879,7 @@ payload:
 - DOMAIN-SUFFIX,adbrkwai.com
 - DOMAIN-SUFFIX,adbvllc.cfd
 - DOMAIN-SUFFIX,adcdn.com
+- DOMAIN-SUFFIX,adcdownload.apple.com.akadns.net
 - DOMAIN-SUFFIX,adcomeon.com
 - DOMAIN-SUFFIX,adcotechina.com
 - DOMAIN-SUFFIX,addaad.com
@@ -12387,6 +12388,7 @@ payload:
 - DOMAIN-SUFFIX,appkaifa.com
 - DOMAIN-SUFFIX,appkefu.com
 - DOMAIN-SUFFIX,applausefz.com
+- DOMAIN-SUFFIX,appldnld.apple.com
 - DOMAIN-SUFFIX,applinzi.com
 - DOMAIN-SUFFIX,applogcdn.com
 - DOMAIN-SUFFIX,applogo.net
@@ -23212,6 +23214,7 @@ payload:
 - DOMAIN-SUFFIX,cmodel.com
 - DOMAIN-SUFFIX,cmodes.com
 - DOMAIN-SUFFIX,cmol.com
+- DOMAIN-SUFFIX,cmpassport.com
 - DOMAIN-SUFFIX,cmpay.com
 - DOMAIN-SUFFIX,cmpe360.com
 - DOMAIN-SUFFIX,cmpedu.com
@@ -29902,6 +29905,7 @@ payload:
 - DOMAIN-SUFFIX,downke.com
 - DOMAIN-SUFFIX,downkr.com
 - DOMAIN-SUFFIX,downkuai.com
+- DOMAIN-SUFFIX,download.epicgames.com
 - DOMAIN-SUFFIX,download.microsoft.com
 - DOMAIN-SUFFIX,download.visualstudio.microsoft.com
 - DOMAIN-SUFFIX,downloads.ltd
@@ -31941,6 +31945,7 @@ payload:
 - DOMAIN-SUFFIX,eleme.hk
 - DOMAIN-SUFFIX,eleme.io
 - DOMAIN-SUFFIX,elemecdn.com
+- DOMAIN-SUFFIX,element-plus.org
 - DOMAIN-SUFFIX,element3ds.com
 - DOMAIN-SUFFIX,elementaw.com
 - DOMAIN-SUFFIX,elementfresh.com
@@ -66472,7 +66477,6 @@ payload:
 - DOMAIN-SUFFIX,mryunwei.com
 - DOMAIN-SUFFIX,mryys.com
 - DOMAIN-SUFFIX,mrzhenggang.com
-- DOMAIN-SUFFIX,ms
 - DOMAIN-SUFFIX,ms08067.com
 - DOMAIN-SUFFIX,ms211.com
 - DOMAIN-SUFFIX,ms315.com

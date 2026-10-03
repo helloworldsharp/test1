@@ -27,8 +27,9 @@ class DNS(socketserver.BaseRequestHandler):
         while data[end]:
             end += data[end] + 1
         end += 5
-        # Controlled foreign address; the selected outbound always rejects before dialing.
-        answer = b"\xc0\x0c\x00\x01\x00\x01\x00\x00\x00\x00\x00\x04" + socket.inet_aton("203.0.114.123")
+        # Controlled DNS only; the selected outbound always rejects before dialing.
+        address = "1.2.4.8" if b"domestic-fixture" in data[12:end] else "192.0.2.123"
+        answer = b"\xc0\x0c\x00\x01\x00\x01\x00\x00\x00\x00\x00\x04" + socket.inet_aton(address)
         sock.sendto(data[:2] + b"\x81\x80\x00\x01\x00\x01\x00\x00\x00\x00" + data[12:end] + answer, self.client_address)
 
 
@@ -48,6 +49,15 @@ def cases():
     for source, device in [("127.0.0.1", None), ("127.0.0.2", "📱 指定设备1"), ("127.0.0.3", "🖱️ 指定设备2")]:
         for host, group in [
             ("baidu.com", direct), ("1.2.4.8", direct), ("192.168.50.1", direct),
+            (f"{source[-1]}.domestic-fixture.invalid", direct),
+            ("download.epicgames.com", direct), ("appldnld.apple.com", direct),
+            ("adcdownload.apple.com.akadns.net", direct),
+            ("cmpassport.com", direct), ("element-plus.org", direct),
+            ("aka.ms", device or "Ⓜ 微软服务"), ("oneclient.sfx.ms", device or "Ⓜ 微软服务"),
+            ("unrelated-audit.ms", device or "🐟 漏网之鱼"),
+            ("msgamestudios.com", device or "🎮 其他游戏平台"),
+            ("domestic-fixture.google.cn", device or "🍀 Google相关"),
+            ("domestic-fixture.ibkr.com.cn", device or "📈 海外券商"),
             ("speedtest.net", direct), ("ty1.chtm.hinet.net", direct),
             ("msftconnecttest.com", direct), ("push.apple.com", "🍎 苹果推送"),
             ("doubleclick.net", "🛡 广告拦截"), ("st.dl.bscstorage.net", direct),
@@ -101,6 +111,15 @@ def prepare(root, candidate, home, port, dns_port, mutate=None):
     elif mutate == "devices-first":
         devices = [rule for rule in config["rules"] if rule.startswith(("RULE-SET,src_alone1,", "RULE-SET,src_alone2,"))]
         config["rules"] = devices + [rule for rule in config["rules"] if rule not in devices]
+    elif mutate == "override-unguarded":
+        config["rules"] = [rule for rule in config["rules"]
+                           if not (rule.startswith("AND,") and "RULE-SET,proxy_override" in rule)]
+    elif mutate == "google-refresh":
+        # Update ONLY the service provider; all other provider caches remain old.
+        path = home / "google.yaml"
+        data = load(path)
+        data["payload"].append("DOMAIN-SUFFIX,audit-new-service.cn")
+        path.write_text(yaml.safe_dump(data), encoding="utf-8")
     return config
 
 
@@ -116,11 +135,15 @@ def run(root, candidate, binary, evidence, mutate=None, dns_contract=False):
                 port = free_port()
                 config = prepare(root, candidate, home, port, dns.server_address[1], mutate)
                 selected_cases = cases()
+                if mutate == "google-refresh":
+                    selected_cases += [(source, "audit-new-service.cn", group) for source, group in
+                                       [("127.0.0.1", "🍀 Google相关"), ("127.0.0.2", "📱 指定设备1"),
+                                        ("127.0.0.3", "🖱️ 指定设备2")]]
                 if dns_contract:
                     config["rules"] = [
-                        "AND,((DOMAIN,no-resolve-fixture.invalid),(IP-CIDR,203.0.114.123/32,no-resolve)),🎯 全球直连",
+                        "AND,((DOMAIN,no-resolve-fixture.invalid),(IP-CIDR,192.0.2.123/32,no-resolve)),🎯 全球直连",
                         "DOMAIN,no-resolve-fixture.invalid,🐟 漏网之鱼",
-                        "AND,((DOMAIN,resolve-fixture.invalid),(IP-CIDR,203.0.114.123/32)),🎯 全球直连",
+                        "AND,((DOMAIN,resolve-fixture.invalid),(IP-CIDR,192.0.2.123/32)),🎯 全球直连",
                         "MATCH,🐟 漏网之鱼",
                     ]
                     selected_cases = [("127.0.0.1","no-resolve-fixture.invalid","🐟 漏网之鱼"),
@@ -197,6 +220,8 @@ def run(root, candidate, binary, evidence, mutate=None, dns_contract=False):
                                 time.sleep(.05)
                             dns_queries = dns.queries - queries_before
                             passed = f"using {expected}[REJECT]" in observed
+                            if host.endswith(".domestic-fixture.invalid"):
+                                passed = passed and dns_queries > 0
                             if dns_contract:
                                 passed = passed and (dns_queries == 0 if host.startswith("no-resolve-") else dns_queries > 0)
                             results.append({"source":source, "host":host, "expected":expected, "passed":passed, "dns_queries":dns_queries, "log":observed})
@@ -227,7 +252,7 @@ if __name__ == "__main__":
     parser.add_argument("--candidate", type=Path, required=True)
     parser.add_argument("--mihomo", type=Path, required=True)
     parser.add_argument("--evidence", type=Path, required=True)
-    parser.add_argument("--mutate", choices=["bnq-shadow", "devices-first"])
+    parser.add_argument("--mutate", choices=["bnq-shadow", "devices-first", "override-unguarded", "google-refresh"])
     args = parser.parse_args()
     passed = run(args.root, args.candidate, args.mihomo.resolve(), args.evidence, args.mutate)
     if passed and not args.mutate:

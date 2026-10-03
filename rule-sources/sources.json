@@ -250,17 +250,13 @@
       "ref": "ip-lists",
       "path": "china.txt",
       "format": "text",
-      "behavior": "ipcidr"
+      "behavior": "ipcidr",
+      "no_resolve": false
     },
     "telegram_ipv4": {
       "url": "https://core.telegram.org/resources/cidr.txt",
       "format": "text",
       "behavior": "ipcidr"
-    },
-    "wbrokers": {
-      "local": "rules/wbrokers.yaml",
-      "format": "yaml",
-      "behavior": "classical"
     }
   },
   "outputs": {
@@ -299,7 +295,17 @@
     "google": {
       "parts": [
         {
-          "source": "old_google"
+          "source": "old_google",
+          "types": ["DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD", "DOMAIN-REGEX"]
+        }
+      ],
+      "behavior": "classical"
+    },
+    "google_non_domain": {
+      "parts": [
+        {
+          "source": "old_google",
+          "types": ["IP-CIDR", "PROCESS-NAME"]
         }
       ],
       "behavior": "classical"
@@ -514,28 +520,6 @@
       "parts": [
         {
           "source": "china_ipv4"
-        }
-      ]
-    },
-    "china_exclusions": {
-      "parts": [
-        {
-          "source": "old_google",
-          "types": [
-            "DOMAIN",
-            "DOMAIN-SUFFIX",
-            "DOMAIN-KEYWORD",
-            "DOMAIN-REGEX"
-          ]
-        },
-        {
-          "source": "wbrokers",
-          "types": [
-            "DOMAIN",
-            "DOMAIN-SUFFIX",
-            "DOMAIN-KEYWORD",
-            "DOMAIN-REGEX"
-          ]
         }
       ]
     }

@@ -57,7 +57,9 @@ def download(url):
             time.sleep(attempt + 1)
 
 
-def parse(body, fmt, behavior):
+def parse(body, fmt, behavior, *, no_resolve=True):
+    if not isinstance(no_resolve, bool) or (not no_resolve and behavior != "ipcidr"):
+        raise ValueError("no_resolve=false is only supported for an ipcidr source")
     text = body.decode("utf-8-sig")
     if fmt == "yaml":
         data = yaml.load(text, Loader=UniqueLoader)
@@ -79,7 +81,7 @@ def parse(body, fmt, behavior):
         if behavior == "ipcidr":
             net = ipaddress.ip_network(value, strict=False)
             if net.version == 4:
-                result.append("IP-CIDR," + str(net) + ",no-resolve")
+                result.append("IP-CIDR," + str(net) + (",no-resolve" if no_resolve else ""))
         elif behavior == "domain":
             if "," in value or any(char.isspace() for char in value) or "/" in value:
                 raise ValueError(f"invalid domain pattern: {value}")
@@ -143,7 +145,7 @@ def build(root, output, fetch=download):
         else:
             url = source["url"]
             body = fetch(url)
-        rules = parse(body, source["format"], source["behavior"])
+        rules = parse(body, source["format"], source["behavior"], no_resolve=source.get("no_resolve", True))
         raw_rules[name] = rules
         receipts[name] = {"url": url, "sha256": sha(body), "rules": len(rules)}
 

@@ -35,9 +35,10 @@ jobs:
           fi
       - run: python scripts/rule-updater/get_mihomo.py --output "$RUNNER_TEMP/mihomo"
       - run: python scripts/rule-updater/verify_kernel.py --candidate "$RUNNER_TEMP/candidate" --mihomo "$RUNNER_TEMP/mihomo" --evidence "$RUNNER_TEMP/kernel"
+      - run: python scripts/rule-updater/verify_kernel.py --candidate "$RUNNER_TEMP/candidate" --mihomo "$RUNNER_TEMP/mihomo" --evidence "$RUNNER_TEMP/google-refresh" --mutate google-refresh
       - name: Verify priority regressions are detected
         run: |
-          for mutation in bnq-shadow devices-first; do
+          for mutation in bnq-shadow devices-first override-unguarded; do
             if python scripts/rule-updater/verify_kernel.py --candidate "$RUNNER_TEMP/candidate" --mihomo "$RUNNER_TEMP/mihomo" --evidence "$RUNNER_TEMP/$mutation" --mutate "$mutation"; then
               echo "Regression was not detected"; exit 1
             fi
@@ -55,6 +56,8 @@ jobs:
             ${{ runner.temp }}/kernel
             ${{ runner.temp }}/bnq-shadow
             ${{ runner.temp }}/devices-first
+            ${{ runner.temp }}/override-unguarded
+            ${{ runner.temp }}/google-refresh
       - name: Failure summary
         if: failure()
         run: echo 'Rule update/validation failed. Production data was not published. Inspect the failed step and kernel evidence; GitHub Actions failure email must be enabled by the receiving account.' >> "$GITHUB_STEP_SUMMARY"
