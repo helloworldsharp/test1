@@ -3,7 +3,8 @@
 **/__pycache__/
 *.py[cod]
 
-# Local audit, planning, and acceptance records (keep distribution READMEs/NOTICE)
+# Local repository overview, audit, planning, and acceptance records
+/README.md
 /docs/
 
 # Browser automation scratch output
