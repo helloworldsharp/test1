@@ -6447,6 +6447,7 @@ payload:
 - DOMAIN-SUFFIX,clau.de
 - DOMAIN-SUFFIX,claude.ai
 - DOMAIN-SUFFIX,claude.com
+- DOMAIN-SUFFIX,claude.dev
 - DOMAIN-SUFFIX,claudemcpclient.com
 - DOMAIN-SUFFIX,claudemcpcontent.com
 - DOMAIN-SUFFIX,claudeusercontent.com
@@ -11308,6 +11309,7 @@ payload:
 - DOMAIN-SUFFIX,googlepagecreator.com
 - DOMAIN-SUFFIX,googlephotos.com
 - DOMAIN-SUFFIX,googleplay.com
+- DOMAIN-SUFFIX,googleplaycensorship.com
 - DOMAIN-SUFFIX,googleplus.com
 - DOMAIN-SUFFIX,googlescholar.com
 - DOMAIN-SUFFIX,googlesource.com

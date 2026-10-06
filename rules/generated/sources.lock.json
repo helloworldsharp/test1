@@ -1,184 +1,184 @@
 {
   "sources": {
     "old_lan": {
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/LocalAreaNetwork.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7102021bafc77e8d19377603d8b39d3a37cc0264/Clash/LocalAreaNetwork.list",
       "sha256": "0789504d97d8f5b14513c529c61c06f4f862c5cfd20f7cb30bbcd38357e54468",
       "rules": 33
     },
     "old_ad_anti_ad": {
-      "url": "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/92c0343b0c5388647b147e9578178517b66aebb6/anti-ad-clash.yaml",
-      "sha256": "ccfb67457e2655bfe701d8036fab1d849646fd15aa5f725bc674e744b8726b3b",
-      "rules": 100064
+      "url": "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/a4c457a0787b5a6e49b7cdff036b30225b7d7b43/anti-ad-clash.yaml",
+      "sha256": "3adc4ccca42bedd6a71c55e1b5766e7a30b0e8acd615585e90a8f6201e3a3919",
+      "rules": 100720
     },
     "old_google": {
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Google/Google.yaml",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/124a5ab5504726bad72915baf3a6ca7e2c92ffcd/rule/Clash/Google/Google.yaml",
       "sha256": "dfb4bf0a0095e48f024fbb7c31564a928e6c7d450b662aca9803119489a9237c",
       "rules": 700
     },
     "old_github": {
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/GitHub/GitHub.yaml",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/124a5ab5504726bad72915baf3a6ca7e2c92ffcd/rule/Clash/GitHub/GitHub.yaml",
       "sha256": "a2641ce2f10857831b600623f97d354e6f8db7b20dff175c5313c2c46e0b6867",
       "rules": 31
     },
     "old_bybit": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/bybit.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/bybit.yaml",
       "sha256": "4973b843eecfb15f8e29d4b4debafd80b69184340ab46ee767946f400686ea45",
       "rules": 16
     },
     "old_binance": {
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Binance/Binance.yaml",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/124a5ab5504726bad72915baf3a6ca7e2c92ffcd/rule/Clash/Binance/Binance.yaml",
       "sha256": "bc7d8355e8057590601cd8c1c52b9fd693eed854acedac01eb30421df44e46e2",
       "rules": 12
     },
     "old_crypto": {
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/Ruleset/Crypto.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7102021bafc77e8d19377603d8b39d3a37cc0264/Clash/Ruleset/Crypto.list",
       "sha256": "c2d91de7270642af82c416cdd5ba439dc9cbc4d4dd9bff20633ecd6213445741",
       "rules": 252
     },
     "old_twitter": {
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Twitter/Twitter.yaml",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/124a5ab5504726bad72915baf3a6ca7e2c92ffcd/rule/Clash/Twitter/Twitter.yaml",
       "sha256": "67c46c3988da5cdc387eacee945c2950464691af0e2746929455cd9295c3ff2b",
       "rules": 33
     },
     "old_steam_cn": {
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/SteamCN/SteamCN.yaml",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/124a5ab5504726bad72915baf3a6ca7e2c92ffcd/rule/Clash/SteamCN/SteamCN.yaml",
       "sha256": "9001a292467843777e7b97b7a78224da8a259f5e6fcb5d36e4413c28296875e4",
       "rules": 17
     },
     "old_steam": {
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Steam/Steam.yaml",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/124a5ab5504726bad72915baf3a6ca7e2c92ffcd/rule/Clash/Steam/Steam.yaml",
       "sha256": "585e423c866bb020421a79dd2842f279b56ef94bf487fbee13354796958dcad6",
       "rules": 54
     },
     "old_origin": {
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Origin/Origin.yaml",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/124a5ab5504726bad72915baf3a6ca7e2c92ffcd/rule/Clash/Origin/Origin.yaml",
       "sha256": "fe832c54fbf733f2474ac69a39e66b3a7d266d8277c573f2a126bafa0b457481",
       "rules": 7
     },
     "old_sony": {
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Sony/Sony.yaml",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/124a5ab5504726bad72915baf3a6ca7e2c92ffcd/rule/Clash/Sony/Sony.yaml",
       "sha256": "2ba664229ac5bd40edf2b99fd0cfbac2ee8d757bb5700c0cd638cfc0fdef057a",
       "rules": 116
     },
     "old_nintendo": {
-      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/5fe08949edb51935c67e0766dc4bc94c0dad0509/rule/Clash/Nintendo/Nintendo.yaml",
+      "url": "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/124a5ab5504726bad72915baf3a6ca7e2c92ffcd/rule/Clash/Nintendo/Nintendo.yaml",
       "sha256": "aa9bce448f8c8740b0d59bec6e2869d4bf1ffcade4a59895bef64c141775e930",
       "rules": 126
     },
     "old_google_fcm": {
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/Ruleset/GoogleFCM.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7102021bafc77e8d19377603d8b39d3a37cc0264/Clash/Ruleset/GoogleFCM.list",
       "sha256": "f115f84bef66a5aa931fd20f23d6914cdfdfe3d07795d65549d578b91a0f0c48",
       "rules": 44
     },
     "old_microsoft": {
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/Microsoft.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7102021bafc77e8d19377603d8b39d3a37cc0264/Clash/Microsoft.list",
       "sha256": "b502566c1b86d5512111bd4a2bb5d808eda4e36aad3009a3ca05da354c09449e",
       "rules": 79
     },
     "old_apple": {
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/Apple.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7102021bafc77e8d19377603d8b39d3a37cc0264/Clash/Apple.list",
       "sha256": "7b2e60cd0bf3c4bfb1369890d39cc3783bdfcb016089b78acee0ff6f0d4e51c5",
       "rules": 29
     },
     "old_netflix": {
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/Ruleset/Netflix.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7102021bafc77e8d19377603d8b39d3a37cc0264/Clash/Ruleset/Netflix.list",
       "sha256": "eb09e16b5aa228230e5770bfc04f2eb25261454a0b2e16f05fd3e9d2ab5202b5",
       "rules": 40
     },
     "old_proxy_gfwlist": {
-      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7ec917109533597bd7f646cf2c01ad8f1db6c88d/Clash/ProxyGFWlist.list",
+      "url": "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/7102021bafc77e8d19377603d8b39d3a37cc0264/Clash/ProxyGFWlist.list",
       "sha256": "72d5f97cb3adedd7ef632962effda4aa3b9953da20427cd6050d55d1184de5ea",
       "rules": 6880
     },
     "meta_cn": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/cn.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/cn.yaml",
       "sha256": "043d6c1d338b56807253741e60c1645e7661bcedcd2f76fbe0c2d866591038f3",
       "rules": 111224
     },
     "meta_openai": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/openai.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/openai.yaml",
       "sha256": "ea7ffb2db4d913f8cc67d3e7be19035155aba5247032592d8130b8f6552fdd56",
       "rules": 23
     },
     "meta_anthropic": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/anthropic.yaml",
-      "sha256": "f85584027478449a011d5011dd20d8bedd9c641e0e8e5a85f698008a09b00e32",
-      "rules": 8
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/anthropic.yaml",
+      "sha256": "5b59537cd09e1dc487943af6270d739ad3c9a4b41fd22b1df886fe3a7b693f4f",
+      "rules": 9
     },
     "meta_github": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/github.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/github.yaml",
       "sha256": "43b2e93766f1ea80f5c0bec3b617b3a4475bf0283db8e5e6e6fa44df8e2de3a5",
       "rules": 64
     },
     "meta_binance": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/binance.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/binance.yaml",
       "sha256": "2c3535d477a8d4ed7fbde9640629bffe108fe5f395ff5aad182d13f76b373f55",
       "rules": 45
     },
     "meta_twitter": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/twitter.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/twitter.yaml",
       "sha256": "3c9277372816fc5fe4dc79a3a72465af12efd84a6d328f52ee7ff4b400bf6db4",
       "rules": 24
     },
     "meta_xai": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/xai.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/xai.yaml",
       "sha256": "85e9ac5b4a9258c2adbece98820c66231da78e69dc8ff455a51509596fc71ce1",
       "rules": 4
     },
     "meta_youtube": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/youtube.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/youtube.yaml",
       "sha256": "c4e9bdb1ca911692a3887a950fe06cc09e3d525a4916ae78a9b5a2a9568d2ec1",
       "rules": 178
     },
     "meta_bing": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/bing.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/bing.yaml",
       "sha256": "3f7e93d9185fc25983aee3fc6bd041ad13577aee1c179c09b59569e548d1ba3e",
       "rules": 40
     },
     "meta_onedrive": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/onedrive.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/onedrive.yaml",
       "sha256": "80849329037380feabbb958ab4ca1400e5c1093a18ed9cb8de4acf1360a6f1c5",
       "rules": 19
     },
     "meta_microsoft": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/microsoft.yaml",
-      "sha256": "448132d4780053f7561ded8f66f75a4ed16aa1a554d2b0569379d628a053ef72",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/microsoft.yaml",
+      "sha256": "394ace3fe309d363c5b1851ee5e15592161ebf7c14e89f863cf443cade284980",
       "rules": 749
     },
     "meta_xbox": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/xbox.yaml",
-      "sha256": "c89f54be0032229fa6c273e3c5e84f95f28e3caffb422ac64c4fe194c7ff31df",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/xbox.yaml",
+      "sha256": "ba07c7bcad123dbedcca8ea2fd820a6fb828c1876385db6ee2e6a1a348f8c519",
       "rules": 45
     },
     "meta_epicgames": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/epicgames.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/epicgames.yaml",
       "sha256": "4e4389b52aa9da4418608910457c43cc6ae31064a4b15d7601cea10a550a8e73",
       "rules": 33
     },
     "meta_ea": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/ea.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/ea.yaml",
       "sha256": "13ccaaccccf4ee696a9d5c6f532dfcefed16f155f383dfb509f11a7b702e1f2d",
       "rules": 165
     },
     "meta_telegram": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/telegram.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/telegram.yaml",
       "sha256": "6c357c7799ad105074a318f6251d33901a1bfffd60051fa7e5fad73c04d0af4b",
       "rules": 21
     },
     "meta_netflix": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/netflix.yaml",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/netflix.yaml",
       "sha256": "d2dd4babc01c6794931f71807936650cc0d886c4620ef6f014150575b38b6fb2",
       "rules": 28
     },
     "meta_geolocation-!cn": {
-      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/c98b7dfd30a369df1d093d8394e68f0a2d970ca3/geo/geosite/classical/geolocation-!cn.yaml",
-      "sha256": "be4841f25b67a87d6233df131b801f628d4f31611c853385c23937fb7b9ea0e7",
-      "rules": 27215
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/989c8194a8c01e8d85ab2c33aa7d8af3849d3393/geo/geosite/classical/geolocation-!cn.yaml",
+      "sha256": "5816a0e9a41e5f1f77d18dd1a222fe683cad0a558a8e8a1c061812346fda02db",
+      "rules": 27217
     },
     "china_ipv4": {
-      "url": "https://raw.githubusercontent.com/gaoyifan/china-operator-ip/d0b41caab13e4d80fbeca47d73839489d92a1a48/china.txt",
-      "sha256": "abef18717fbf33392db9cb07f500fb7ba9efb0d45e5c8d8e57db761251ed9e6c",
-      "rules": 6205
+      "url": "https://raw.githubusercontent.com/gaoyifan/china-operator-ip/3374b0797c591a18cc03f98d07a8a9b2ba4eb1b1/china.txt",
+      "sha256": "16af6ce1313456b3b0da60e88ed8791fc11e132fd15941abfa094ad093679bb5",
+      "rules": 6208
     },
     "telegram_ipv4": {
       "url": "https://core.telegram.org/resources/cidr.txt",
@@ -202,10 +202,10 @@
       }
     },
     "ad_anti_ad": {
-      "rules": 100064,
-      "sha256": "3ff6196cc3e612010627c27c1633077a0969b04f358603dea29d662c706e3e1f",
+      "rules": 100720,
+      "sha256": "c73d266ded78389534eb64a64beb91e879c34c43e9c0fbe792fc1e0de3ceaf6c",
       "types": {
-        "domain": 100064
+        "domain": 100720
       }
     },
     "bybit": {
@@ -411,19 +411,19 @@
       }
     },
     "proxy_foreign": {
-      "rules": 27215,
-      "sha256": "972f8e63b4d74130e665a72d32157d1b68f8160bfac734e0c3302da986ab0312",
+      "rules": 27217,
+      "sha256": "30f0df3cdea60e05ecfe395adbe23b096d8c6b7899b3d1dd9c1529c7df611833",
       "types": {
         "DOMAIN": 753,
         "DOMAIN-REGEX": 151,
-        "DOMAIN-SUFFIX": 26311
+        "DOMAIN-SUFFIX": 26313
       }
     },
     "china_company_ip": {
-      "rules": 6205,
-      "sha256": "6d6cf0d757877094b35925a56410afea2d9be3322b8e704f4b3296f1f3d36761",
+      "rules": 6208,
+      "sha256": "1e334c16604bd99d7c6aae6e0977038d8ed68b04bed66061bb9a16bf72179b4f",
       "types": {
-        "IP-CIDR": 6205
+        "IP-CIDR": 6208
       }
     }
   }
