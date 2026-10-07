@@ -34,7 +34,7 @@ generated 文件通过 .gitattributes 固定 LF，避免 Windows checkout 的换
 
 ## 验证证明范围
 
-内核加载本轮本地候选，等全部 provider 初始化完成后检查基础路由、AI 补充域名、Anthropic 网段内外边界及候选中每个 OpenAI Voice IPv4 网段的代表地址；当前23条语音IP时共252个场景。source-device fixture 使用三个回环地址，同时验证普通来源进入 AI、指定设备继续使用设备组、共享 WorkOS 后缀不被整体接管。受控 DNS 默认返回文档地址 `192.0.2.123`，国内 fixture 返回 `1.2.4.8`；验证域名解析后的国内直连、裸 IP、Google/券商排除、下载与服务归属。另有两例控制 DNS 查询的 no-resolve 验证。出口全部 REJECT，真实互联网服务不会收到测试连接；语音 UDP、节点能力和真实登录仍须实机验证。
+内核加载本轮本地候选，等全部 provider 初始化完成后检查基础路由、AI 补充域名、Anthropic 网段内外边界及候选中每个 OpenAI Voice IPv4 网段的代表地址；当前23条语音IP时共270个场景。source-device fixture 使用三个回环地址，同时验证普通来源进入 AI、指定设备继续使用设备组、共享 WorkOS 后缀不被整体接管。受控 DNS 默认返回文档地址 `192.0.2.123`，国内 fixture 返回 `1.2.4.8`；验证域名解析后的国内直连、裸 IP、Google/券商排除、下载与服务归属。另有两例控制 DNS 查询的 no-resolve 验证。出口全部 REJECT，真实互联网服务不会收到测试连接；语音 UDP、节点能力和真实登录仍须实机验证。
 
 `--mutate bnq-shadow`、`--mutate devices-first`、`--mutate override-unguarded` 应返回非零并产生完整 report.json，分别检出 Bybit 被 Crypto 接走、设备规则抢在直连前和代理例外失去设备保护。只有测试副本被变更。
 
@@ -42,7 +42,7 @@ generated 文件通过 .gitattributes 固定 LF，避免 Windows checkout 的换
 
 原策略组用合成节点做语法检查，行为测试把各组出口换为 REJECT 来观察匹配组；实际 selector chain、节点健康、默认选择及 Stash/Verge 的实机功能仍待对应客户端验收。
 
-启动检查除了 listener 与 provider 条数，还等待一个独立回环请求产生匹配日志；Mihomo 在 provider 初始化后才将 tunnel 设为 Running。就绪探针允许在 30 秒内轮询，实际行为用例仍各执行一次，避免启动竞态吞掉首个用例或重试掩盖路由失败。
+测试端口同时检查 TCP/UDP 可绑定性；释放端口到内核绑定之间仍有竞争窗口，监听失败会带具体错误和 kernel.log 路径终止。启动检查除了 listener 与 provider 条数，还等待一个独立回环请求产生匹配日志；Mihomo 在 provider 初始化后才将 tunnel 设为 Running。就绪探针允许在 30 秒内轮询，实际行为用例仍各执行一次，避免启动竞态吞掉首个用例或重试掩盖路由失败。
 
 ## CI 与发布
 

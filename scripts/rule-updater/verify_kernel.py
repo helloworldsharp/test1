@@ -38,9 +38,28 @@ def load(path):
 
 
 def free_port():
-    with socket.socket() as sock:
-        sock.bind(("127.0.0.1", 0))
-        return sock.getsockname()[1]
+    # Mixed listeners need the same port on TCP and UDP. Keep TCP bound while
+    # checking UDP; another process can still claim the port after we return.
+    last_error = None
+    for _ in range(100):
+        with socket.socket() as tcp, socket.socket(type=socket.SOCK_DGRAM) as udp:
+            tcp.bind(("127.0.0.1", 0))
+            port = tcp.getsockname()[1]
+            try:
+                udp.bind(("127.0.0.1", port))
+            except OSError as error:
+                last_error = error
+                continue
+            return port
+    raise RuntimeError("No loopback port available for both TCP and UDP after 100 attempts") from last_error
+
+
+def check_startup(process, log_path):
+    for line in log_path.read_text(encoding="utf-8", errors="replace").splitlines():
+        if "level=error" in line and ("listen " in line or "server error:" in line):
+            raise RuntimeError(f"Mihomo listener startup failed: {line}; see {log_path}")
+    if process.poll() is not None:
+        raise RuntimeError(f"Mihomo exited during startup (code {process.returncode}); see {log_path}")
 
 
 def send_connect(port, source, destination):
@@ -98,6 +117,12 @@ def cases(candidate):
             ("netflix.com", device or "🎥 奈飞视频"),
             ("chatgpt-async-webps-prod-eastus-1.webpubsub.azure.com", device or "🤖 AI"),
             ("epicgames-download1.akamaized.net", device or "🎮 其他游戏平台"),
+            ("egdownload.fastly-edge.com", device or "🎮 其他游戏平台"),
+            ("google-ohttp-relay-safebrowsing.fastly-edge.com", device or "🍀 Google相关"),
+            ("mozilla-ohttp.fastly-edge.com", device or main),
+            ("p.bstarstatic.com", direct),
+            ("1dot1dot1dot1.cloudflare-dns.com", device or main),
+            ("backup.unraid.net", direct),
             ("ampproject.org", device or main),
             ("bybit.com", device or "💶 Bybit"), ("bybit-exchange.github.io", device or "💶 Bybit"),
             ("binance.com", device or "🪙 BNQ"), ("tradingview.com", device or "🪙 BNQ"),
@@ -216,14 +241,13 @@ def run(root, candidate, binary, evidence, mutate=None, dns_contract=False):
                     try:
                         deadline = time.monotonic() + 30
                         while True:
-                            if process.poll() is not None:
-                                raise RuntimeError("Mihomo exited during startup")
+                            check_startup(process, log_path)
                             try:
                                 with socket.create_connection(("127.0.0.1", port), timeout=.2):
                                     break
                             except OSError:
                                 if time.monotonic() > deadline:
-                                    raise TimeoutError("Mihomo startup timeout")
+                                    raise TimeoutError(f"Mihomo listener startup timeout; see {log_path}")
                                 time.sleep(.1)
                         opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
                         expected_counts = {
@@ -232,6 +256,7 @@ def run(root, candidate, binary, evidence, mutate=None, dns_contract=False):
                         }
                         deadline = time.monotonic() + 30
                         while True:
+                            check_startup(process, log_path)
                             with opener.open(f"http://127.0.0.1:{controller_port}/providers/rules", timeout=2) as response:
                                 ready = json.load(response)["providers"]
                             if all(ready.get(name, {}).get("ruleCount", 0) == count for name, count in expected_counts.items()):

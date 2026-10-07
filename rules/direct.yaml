@@ -3,7 +3,6 @@ payload:
   - 'DOMAIN-SUFFIX,backup.unraid.net'
   - 'DOMAIN-SUFFIX,asus.com'
   - 'DOMAIN-SUFFIX,nvidia.com'
-  - 'DOMAIN-SUFFIX,fastly-edge.com'
   - 'DOMAIN-SUFFIX,time.windows.com'
   - 'DOMAIN-SUFFIX,lanzov.com'
 
@@ -30,7 +29,6 @@ payload:
   - 'DOMAIN-SUFFIX,bstarstatic.com'
   - 'DOMAIN,apiintl.biliapi.net'
   - 'DOMAIN,apm-misaka.biliapi.net'
-  - 'DOMAIN,p.bstarstatic.com'
   - 'DOMAIN,p-bstarstatic.akamaized.net'
   - 'DOMAIN,upos-bstar-mirrorakam.akamaized.net'
   - 'DOMAIN,upos-bstar1-mirrorakam.akamaized.net'
