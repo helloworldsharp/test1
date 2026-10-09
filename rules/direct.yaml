@@ -5,6 +5,8 @@ payload:
   - 'DOMAIN-SUFFIX,nvidia.com'
   - 'DOMAIN-SUFFIX,time.windows.com'
   - 'DOMAIN-SUFFIX,lanzov.com'
+  - 'DOMAIN-SUFFIX,duolingo.com'
+  - 'DOMAIN-SUFFIX,duolingo.cn'
 
   # Ookla server discovery and measurement (all source devices)
   - 'DOMAIN-SUFFIX,speedtest.net'
