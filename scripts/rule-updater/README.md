@@ -28,7 +28,7 @@ ChatGPT Voice IPv4 从官方 `https://openai.com/chatgpt-voice.json` 获取，�
 
 更新器全部来源和转换通过后才建立新候选目录，拒绝覆盖已有目录；网络/解析失败不写正式产物。I/O 失败可能留下不完整候选，不能发布，可复核后清理。相同输入输出一致，正文无变化保留上次内容变化时的 receipt，不因上游每日生成时间制造 commit。
 
-请求串行执行，同一 repo/ref 每轮只查询一次 commit；当前38个来源正常一轮共5次 GitHub REST commit 查询，其余为规则正文下载。每日计划保持一次。遇到 HTTP 429 或明确限流的403，遵循 `Retry-After` 与额度耗尽时的 `X-RateLimit-Reset`，两者都有时取较晚时间；无有效等待信息时从60秒开始指数退避。每个来源最多3次尝试、累计等待不超过120秒；超过预算直接失败，不提前重试。普通403/404等永久 HTTP 错误不重试，网络错误与5xx沿用短间隔重试。错误包含公开来源 URL、HTTP 状态及服务端等待字段，便于定位；限流失败仍保留 last-good 产物。请求不携带认证 token，匿名共享出口额度耗尽时仍可能更新失败。
+请求串行执行，同一 repo/ref 每轮只查询一次 commit；当前38个来源正常一轮共5次 GitHub REST commit 查询，其余为规则正文下载。每周计划运行一次，临时需要可手动触发。遇到 HTTP 429 或明确限流的403，遵循 `Retry-After` 与额度耗尽时的 `X-RateLimit-Reset`，两者都有时取较晚时间；无有效等待信息时从60秒开始指数退避。每个来源最多3次尝试、累计等待不超过120秒；超过预算直接失败，不提前重试。普通403/404等永久 HTTP 错误不重试，网络错误与5xx沿用短间隔重试。错误包含公开来源 URL、HTTP 状态及服务端等待字段，便于定位；限流失败仍保留 last-good 产物。请求不携带认证 token，匿名共享出口额度耗尽时仍可能更新失败。
 
 相对当前 generated 基线，每个输出默认最多删除 20%（小集容许 5 条）或增长 50%（小集容许 100 条）；同时受 min_rules/max_rules 限制。异常变化要求复核 sources 定义，不自动回退、拼接旧新来源或吞掉失败。这些阈值不替代路由行为验证。
 
@@ -48,12 +48,12 @@ generated 文件通过 .gitattributes 固定 LF，避免 Windows checkout 的换
 
 ## CI 与发布
 
-`.github/workflows/rules.yml` 在 push/PR 验证已提交产物；schedule/workflow_dispatch 获取上游并生成候选，执行 unit、内核与故障注入检查。schedule 为每天 UTC 00:47（北京时间 08:47），只有默认 branch 的定时工作流会运行。
+`.github/workflows/rules.yml` 在 push/PR 验证已提交产物；schedule/workflow_dispatch 获取上游并生成候选，执行 unit、内核与故障注入检查。schedule 为每周四 UTC 00:47（北京时间周四 08:47），即每7天一次；只有默认 branch 的定时工作流会运行。规则可能滞后上游约一周，临时需要可使用 workflow_dispatch；周更减少运行次数，但不能保证避开匿名共享出口限流。
 
 正式发布要求同时满足：在 main、定时或手动事件、repository variable `RULE_AUTO_PUBLISH=true`、全部验证通过、候选配置已迁移到生产 URL。开发阶段不设置该变量。
 
 只读 validation job 产出不可变 artifact；有 contents write 权限的 publish job 只允许 generated 数据路径。发布单个普通 commit，不 force push、不绕过 branch protection。远端前移或权限拒绝使工作流失败；下一次需基于当前 main 重建验证。GITHUB_TOKEN push 不依赖后续 workflow 再补验证。
 
-`publish.py --candidate <目录>` 仅用于干净的发布 checkout：核对文件集合与 hash 后复制、stage 数据，不自行 commit/push。它不是日常工作区的修改合并器。客户端多 provider 刷新并非原子；涉及跨集合职责、URL 或优先级变化须配置迁移，不能交给每日数据更新。
+`publish.py --candidate <目录>` 仅用于干净的发布 checkout：核对文件集合与 hash 后复制、stage 数据，不自行 commit/push。它不是日常工作区的修改合并器。客户端多 provider 刷新并非原子；涉及跨集合职责、URL 或优先级变化须配置迁移，不能交给定期数据更新。
 
 异常通知使用 GitHub 原生 Actions failure email，由接收账号启用并实际确认收件。无变化成功不发通知；schedule 完全未启动不产生失败邮件。生产发布、通知设置/收件与实机验证分别验收。

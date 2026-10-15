@@ -4,7 +4,7 @@ on:
     branches: [main, 'codex/**']
   pull_request:
   schedule:
-    - cron: '47 0 * * *'
+    - cron: '47 0 * * 4'
   workflow_dispatch:
 permissions:
   contents: read
