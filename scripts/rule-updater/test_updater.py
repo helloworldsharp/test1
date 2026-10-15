@@ -1,12 +1,73 @@
+import io
 import json
 import tempfile
 import unittest
+import urllib.error
 from pathlib import Path
+from unittest.mock import patch
 
 import updater
 
 
 class UpdaterTests(unittest.TestCase):
+    def test_rate_limit_waits_for_server_deadline(self):
+        url = "https://api.github.com/repos/example/rules/commits/main"
+        for status in (403, 429):
+            with self.subTest(status=status):
+                error = urllib.error.HTTPError(url, status, "rate limit exceeded",
+                    {"Retry-After": "5", "X-RateLimit-Remaining": "0", "X-RateLimit-Reset": "1012"}, None)
+                with patch.object(updater.urllib.request, "urlopen", side_effect=[error, io.BytesIO(b"rules")]) as request, \
+                     patch.object(updater.time, "time", return_value=1000), \
+                     patch.object(updater.time, "sleep") as sleep:
+                    self.assertEqual(updater.download(url), b"rules")
+                    sleep.assert_called_once_with(13)
+                    self.assertEqual(request.call_count, 2)
+
+    def test_rate_limit_without_deadline_backs_off_with_bounded_wait(self):
+        url = "https://api.github.com/repos/example/rules/commits/main"
+        for status, reason in ((403, "rate limit exceeded"), (429, "Too Many Requests")):
+            with self.subTest(status=status):
+                error = urllib.error.HTTPError(url, status, reason, {}, None)
+                with patch.object(updater.urllib.request, "urlopen", side_effect=error) as request, \
+                     patch.object(updater.time, "sleep") as sleep:
+                    with self.assertRaisesRegex(RuntimeError, "wait budget"):
+                        updater.download(url)
+                    sleep.assert_called_once_with(60)
+                    self.assertEqual(request.call_count, 2)
+
+    def test_long_rate_limit_fails_without_early_retry(self):
+        url = "https://api.github.com/repos/example/rules/commits/main"
+        error = urllib.error.HTTPError(url, 403, "Forbidden",
+            {"X-RateLimit-Remaining": "0", "X-RateLimit-Reset": "4600"}, None)
+        with patch.object(updater.urllib.request, "urlopen", side_effect=error) as request, \
+             patch.object(updater.time, "time", return_value=1000), \
+             patch.object(updater.time, "sleep") as sleep:
+            with self.assertRaisesRegex(RuntimeError, "https://api.github.com/.*4600"):
+                updater.download(url)
+            request.assert_called_once()
+            sleep.assert_not_called()
+
+    def test_permanent_http_errors_are_not_retried(self):
+        url = "https://raw.githubusercontent.com/example/rules/main/a.list"
+        for status in (403, 404):
+            with self.subTest(status=status):
+                error = urllib.error.HTTPError(url, status, "Forbidden", {}, None)
+                with patch.object(updater.urllib.request, "urlopen", side_effect=error) as request, \
+                     patch.object(updater.time, "sleep") as sleep:
+                    with self.assertRaisesRegex(RuntimeError, str(status)):
+                        updater.download(url)
+                    request.assert_called_once()
+                    sleep.assert_not_called()
+
+    def test_transient_http_and_network_errors_can_recover(self):
+        url = "https://raw.githubusercontent.com/example/rules/main/a.list"
+        errors = [urllib.error.HTTPError(url, 503, "Unavailable", {}, None),
+                  urllib.error.URLError("connection reset"), io.BytesIO(b"rules")]
+        with patch.object(updater.urllib.request, "urlopen", side_effect=errors), \
+             patch.object(updater.time, "sleep") as sleep:
+            self.assertEqual(updater.download(url), b"rules")
+            self.assertEqual([call.args[0] for call in sleep.call_args_list], [1, 2])
+
     def test_official_voice_prefixes_are_ipv4_no_resolve_and_deduplicated(self):
         body = json.dumps({"creationTime": "2026-03-26", "prefixes": [
             {"ipv4Prefix": "102.37.57.54/32"}, {"ipv6Prefix": "2001:db8::/32"},

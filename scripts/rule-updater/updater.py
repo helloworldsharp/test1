@@ -6,7 +6,9 @@ import hashlib
 import ipaddress
 import json
 import re
+import sys
 import time
+import urllib.error
 import urllib.request
 from collections import Counter
 from pathlib import Path
@@ -30,6 +32,7 @@ def unique_mapping(loader, node, deep=False):
 
 UniqueLoader.add_constructor(yaml.resolver.BaseResolver.DEFAULT_MAPPING_TAG, unique_mapping)
 MAX_BYTES = 16 * 1024 * 1024
+MAX_RETRY_WAIT = 120  # Total sleep budget per source; never retry before a server deadline.
 TEXT_TYPES = {"DOMAIN", "DOMAIN-SUFFIX", "DOMAIN-KEYWORD", "DOMAIN-REGEX", "PROCESS-NAME"}
 IP_TYPES = {"IP-CIDR", "IP-CIDR6", "SRC-IP-CIDR"}
 
@@ -41,6 +44,7 @@ def sha(body):
 def download(url):
     if not url.startswith("https://"):
         raise ValueError("public sources must use HTTPS")
+    waited = 0
     for attempt in range(3):
         try:
             request = urllib.request.Request(url, headers={"User-Agent": "proxy-rule-updater/1"})
@@ -51,10 +55,46 @@ def download(url):
             if body.lstrip().lower().startswith((b"<html", b"<!doctype")):
                 raise ValueError("HTML response instead of rules")
             return body
-        except (OSError, TimeoutError):
+        except urllib.error.HTTPError as exc:
+            headers = exc.headers or {}
+            limited = exc.code == 429 or (exc.code == 403 and (
+                headers.get("X-RateLimit-Remaining") == "0" or "Retry-After" in headers
+                or "rate limit" in str(exc.reason).lower()))
+            detail = f"{url}: HTTP {exc.code} {exc.reason}"
+            exc.close()
+            if limited:
+                delays = []
+                for header in ("Retry-After", "X-RateLimit-Reset"):
+                    value = headers.get(header)
+                    if value is not None:
+                        detail += f"; {header}={value}"
+                    if header == "X-RateLimit-Reset" and headers.get("X-RateLimit-Remaining") != "0":
+                        continue
+                    try:
+                        delay = int(value)
+                    except (ValueError, TypeError):
+                        continue
+                    if header == "X-RateLimit-Reset":
+                        delay = delay - time.time() + 1
+                    delays.append(max(1, delay))
+                delay = max(delays) if delays else 60 * (2 ** attempt)
+            elif 500 <= exc.code < 600:
+                delay = attempt + 1
+            else:
+                raise RuntimeError(detail) from exc
             if attempt == 2:
-                raise
-            time.sleep(attempt + 1)
+                raise RuntimeError(f"{detail}; download attempts exhausted") from exc
+        except (OSError, TimeoutError) as exc:
+            if attempt == 2:
+                raise RuntimeError(f"{url}: download attempts exhausted: {exc}") from exc
+            delay = attempt + 1
+            detail = f"{url}: {exc}"
+        if waited + delay > MAX_RETRY_WAIT:
+            raise RuntimeError(f"{detail}; required wait {delay:g}s exceeds remaining wait budget "
+                               f"{MAX_RETRY_WAIT - waited:g}s; no early retry")
+        print(f"{detail}; retry in {delay:g}s", file=sys.stderr)
+        waited += delay
+        time.sleep(delay)
 
 
 def parse(body, fmt, behavior, *, no_resolve=True):

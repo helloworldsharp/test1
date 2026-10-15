@@ -28,6 +28,8 @@ ChatGPT Voice IPv4 从官方 `https://openai.com/chatgpt-voice.json` 获取，�
 
 更新器全部来源和转换通过后才建立新候选目录，拒绝覆盖已有目录；网络/解析失败不写正式产物。I/O 失败可能留下不完整候选，不能发布，可复核后清理。相同输入输出一致，正文无变化保留上次内容变化时的 receipt，不因上游每日生成时间制造 commit。
 
+请求串行执行，同一 repo/ref 每轮只查询一次 commit；当前38个来源正常一轮共5次 GitHub REST commit 查询，其余为规则正文下载。每日计划保持一次。遇到 HTTP 429 或明确限流的403，遵循 `Retry-After` 与额度耗尽时的 `X-RateLimit-Reset`，两者都有时取较晚时间；无有效等待信息时从60秒开始指数退避。每个来源最多3次尝试、累计等待不超过120秒；超过预算直接失败，不提前重试。普通403/404等永久 HTTP 错误不重试，网络错误与5xx沿用短间隔重试。错误包含公开来源 URL、HTTP 状态及服务端等待字段，便于定位；限流失败仍保留 last-good 产物。请求不携带认证 token，匿名共享出口额度耗尽时仍可能更新失败。
+
 相对当前 generated 基线，每个输出默认最多删除 20%（小集容许 5 条）或增长 50%（小集容许 100 条）；同时受 min_rules/max_rules 限制。异常变化要求复核 sources 定义，不自动回退、拼接旧新来源或吞掉失败。这些阈值不替代路由行为验证。
 
 generated 文件通过 .gitattributes 固定 LF，避免 Windows checkout 的换行转换破坏 receipt 中的内容 hash；许可证副本保留下载字节。
