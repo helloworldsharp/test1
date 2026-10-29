@@ -32,11 +32,13 @@ ChatGPT Voice IPv4 从官方 `https://openai.com/chatgpt-voice.json` 获取，�
 
 相对当前 generated 基线，每个输出默认最多删除 20%（小集容许 5 条）或增长 50%（小集容许 100 条）；同时受 min_rules/max_rules 限制。异常变化要求复核 sources 定义，不自动回退、拼接旧新来源或吞掉失败。这些阈值不替代路由行为验证。
 
+2026-10-30 复核 OpenAI 官方 Voice JSON 扩容：IPv4 从23条增至402条，新增379条均为 `/32`，原有地址全部保留，OpenAI 域名部分未变。完成候选与内核验证后，将 `ai_openai` 基线从55条更新为434条；正式 sources 定义及默认增长、删除阈值保持不变，后续更新继续相对新基线检查。
+
 generated 文件通过 .gitattributes 固定 LF，避免 Windows checkout 的换行转换破坏 receipt 中的内容 hash；许可证副本保留下载字节。
 
 ## 验证证明范围
 
-内核加载本轮本地候选，等全部 provider 初始化完成后检查基础路由、AI 补充域名、Anthropic 网段内外边界及候选中每个 OpenAI Voice IPv4 网段的代表地址；当前23条语音IP时共270个场景。source-device fixture 使用三个回环地址，同时验证普通来源进入 AI、指定设备继续使用设备组、共享 WorkOS 后缀不被整体接管。受控 DNS 默认返回文档地址 `192.0.2.123`，国内 fixture 返回 `1.2.4.8`；验证域名解析后的国内直连、裸 IP、Google/券商排除、下载与服务归属。另有两例控制 DNS 查询的 no-resolve 验证。出口全部 REJECT，真实互联网服务不会收到测试连接；语音 UDP、节点能力和真实登录仍须实机验证。
+内核加载本轮本地候选，等全部 provider 初始化完成后检查基础路由、AI 补充域名、Anthropic 网段内外边界及候选中每个 OpenAI Voice IPv4 网段的代表地址；场景数随候选动态增加，每个语音地址均验证三个来源，402条语音IP时共1407个场景。source-device fixture 使用三个回环地址，同时验证普通来源进入 AI、指定设备继续使用设备组、共享 WorkOS 后缀不被整体接管。受控 DNS 默认返回文档地址 `192.0.2.123`，国内 fixture 返回 `1.2.4.8`；验证域名解析后的国内直连、裸 IP、Google/券商排除、下载与服务归属。另有两例控制 DNS 查询的 no-resolve 验证。出口全部 REJECT，真实互联网服务不会收到测试连接；语音 UDP、节点能力和真实登录仍须实机验证。
 
 `--mutate bnq-shadow`、`--mutate devices-first`、`--mutate override-unguarded` 应返回非零并产生完整 report.json，分别检出 Bybit 被 Crypto 接走、设备规则抢在直连前和代理例外失去设备保护。只有测试副本被变更。
 
