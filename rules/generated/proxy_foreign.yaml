@@ -780,7 +780,7 @@ payload:
 - DOMAIN-REGEX,(^|\.)783([a-z][a-z]?)?\.tv$
 - DOMAIN-REGEX,(^|\.)7mm0([0-1][0-9]?)?\.com$
 - DOMAIN-REGEX,(^|\.)8dgo[1-57-9]\.com$
-- DOMAIN-REGEX,(^|\.)91cg([1-9]|[0-9][1-9])?.com$
+- DOMAIN-REGEX,(^|\.)91cg([1-9]|[0-9][1-9])?\.com$
 - DOMAIN-REGEX,(^|\.)91p[0-9][0-9]?\.com$
 - DOMAIN-REGEX,(^|\.)91porn[0-9]?\.store$
 - DOMAIN-REGEX,(^|\.)91porn[0-9]{3}\.me$
@@ -839,6 +839,7 @@ payload:
 - DOMAIN-REGEX,(^|\.)hkfg[1-7]\.xyz$
 - DOMAIN-REGEX,(^|\.)hs[1-9]{2}\.vip$
 - DOMAIN-REGEX,(^|\.)jav777\.(cc|tv|work)$
+- DOMAIN-REGEX,(^|\.)javdb\d+\.com$
 - DOMAIN-REGEX,(^|\.)jb[1-9][0-9]\.lol$
 - DOMAIN-REGEX,(^|\.)jbk0([0-1][0-9]?)?\.com$
 - DOMAIN-REGEX,(^|\.)jdyy[1-9]?\.me$
@@ -918,7 +919,6 @@ payload:
 - DOMAIN-REGEX,^epicgames-download\d\.akamaized\.net$
 - DOMAIN-REGEX,^ewcdn[0-9]+\.nowe\.com$
 - DOMAIN-REGEX,^hses[1-7]?\.akamaized\.net$
-- DOMAIN-REGEX,javdb\d+\.com$
 - DOMAIN-SUFFIX,000webhost.com
 - DOMAIN-SUFFIX,01.org
 - DOMAIN-SUFFIX,02weqj32.com
@@ -1039,6 +1039,7 @@ payload:
 - DOMAIN-SUFFIX,18comic-god.xyz
 - DOMAIN-SUFFIX,18comic.cc
 - DOMAIN-SUFFIX,18comic.company
+- DOMAIN-SUFFIX,18comic.ink
 - DOMAIN-SUFFIX,18comic.org
 - DOMAIN-SUFFIX,18comic.vip
 - DOMAIN-SUFFIX,18commic.com
@@ -4284,6 +4285,7 @@ payload:
 - DOMAIN-SUFFIX,beget.cloud
 - DOMAIN-SUFFIX,beget.com
 - DOMAIN-SUFFIX,beget.de
+- DOMAIN-SUFFIX,beget.email
 - DOMAIN-SUFFIX,beget.hosting
 - DOMAIN-SUFFIX,beget.pro
 - DOMAIN-SUFFIX,beget.ru
@@ -4507,6 +4509,7 @@ payload:
 - DOMAIN-SUFFIX,bili2.cc
 - DOMAIN-SUFFIX,bili888.com
 - DOMAIN-SUFFIX,bili999.com
+- DOMAIN-SUFFIX,bilibili.tv
 - DOMAIN-SUFFIX,bilinovel.com
 - DOMAIN-SUFFIX,biliplus.com
 - DOMAIN-SUFFIX,biliworld.com
@@ -4576,6 +4579,7 @@ payload:
 - DOMAIN-SUFFIX,bingoporno.com
 - DOMAIN-SUFFIX,bingparachute.com
 - DOMAIN-SUFFIX,bingsandbox.com
+- DOMAIN-SUFFIX,bingstatic.com
 - DOMAIN-SUFFIX,bingvisualsearch.com
 - DOMAIN-SUFFIX,bingworld.com
 - DOMAIN-SUFFIX,bingx.com
@@ -4860,6 +4864,7 @@ payload:
 - DOMAIN-SUFFIX,bmia.org
 - DOMAIN-SUFFIX,bmj.com
 - DOMAIN-SUFFIX,bml.info
+- DOMAIN-SUFFIX,bmonkeys.net
 - DOMAIN-SUFFIX,bmw
 - DOMAIN-SUFFIX,bmw-abudhabi.com
 - DOMAIN-SUFFIX,bmw-adventskalender.com
@@ -5284,6 +5289,7 @@ payload:
 - DOMAIN-SUFFIX,bokep.net
 - DOMAIN-SUFFIX,bokepseks.org
 - DOMAIN-SUFFIX,bokepvidz.com
+- DOMAIN-SUFFIX,boldgrid.com
 - DOMAIN-SUFFIX,bolehvpn.net
 - DOMAIN-SUFFIX,bollywoodlife.com
 - DOMAIN-SUFFIX,boltdns.net
@@ -5531,6 +5537,7 @@ payload:
 - DOMAIN-SUFFIX,bscdnweb.com
 - DOMAIN-SUFFIX,bsi.ir
 - DOMAIN-SUFFIX,bsky.app
+- DOMAIN-SUFFIX,bsky.chat
 - DOMAIN-SUFFIX,bsky.network
 - DOMAIN-SUFFIX,bsky.social
 - DOMAIN-SUFFIX,bspb.ru
@@ -6618,6 +6625,7 @@ payload:
 - DOMAIN-SUFFIX,cloudproxy.app
 - DOMAIN-SUFFIX,cloudrobotics.com
 - DOMAIN-SUFFIX,cloudvolumes.com
+- DOMAIN-SUFFIX,cloudwp.dev
 - DOMAIN-SUFFIX,cloudyzgirl.com
 - DOMAIN-SUFFIX,cloupia.com
 - DOMAIN-SUFFIX,cloupia.net
@@ -10971,6 +10979,7 @@ payload:
 - DOMAIN-SUFFIX,githubassets.com
 - DOMAIN-SUFFIX,githubcopilot.com
 - DOMAIN-SUFFIX,githubhackathon.com
+- DOMAIN-SUFFIX,githubhelp.com
 - DOMAIN-SUFFIX,githubnext.com
 - DOMAIN-SUFFIX,githubpreview.dev
 - DOMAIN-SUFFIX,githubstatus.com
@@ -15036,6 +15045,9 @@ payload:
 - DOMAIN-SUFFIX,lilhumpers.com
 - DOMAIN-SUFFIX,liliav.com
 - DOMAIN-SUFFIX,lilith-soft.com
+- DOMAIN-SUFFIX,limbuscompany.global
+- DOMAIN-SUFFIX,limbuscompanyapi.com
+- DOMAIN-SUFFIX,limbuscompanycdn.org
 - DOMAIN-SUFFIX,limedia.tw
 - DOMAIN-SUFFIX,limelight.com
 - DOMAIN-SUFFIX,limer.tw
@@ -16884,6 +16896,7 @@ payload:
 - DOMAIN-SUFFIX,msfteducation.ca
 - DOMAIN-SUFFIX,msftncsi.com
 - DOMAIN-SUFFIX,msftnet.org
+- DOMAIN-SUFFIX,msftstatic.com
 - DOMAIN-SUFFIX,msgamesresearch.com
 - DOMAIN-SUFFIX,msgamestudios.com
 - DOMAIN-SUFFIX,msha.gov
@@ -19924,6 +19937,7 @@ payload:
 - DOMAIN-SUFFIX,projectcircuitbreaker.com
 - DOMAIN-SUFFIX,projecteuclid.org
 - DOMAIN-SUFFIX,projectjav.com
+- DOMAIN-SUFFIX,projectmoon.studio
 - DOMAIN-SUFFIX,projectmurphy.net
 - DOMAIN-SUFFIX,projectpoint.com
 - DOMAIN-SUFFIX,projectpoint.net
@@ -21772,6 +21786,7 @@ payload:
 - DOMAIN-SUFFIX,skillshare.com
 - DOMAIN-SUFFIX,skimtube.com
 - DOMAIN-SUFFIX,skinstrip.net
+- DOMAIN-SUFFIX,skinswap.com
 - DOMAIN-SUFFIX,skokka.com
 - DOMAIN-SUFFIX,sksarab.top
 - DOMAIN-SUFFIX,skunkgirl.cc
@@ -22453,6 +22468,7 @@ payload:
 - DOMAIN-SUFFIX,steamladder.com
 - DOMAIN-SUFFIX,steamofporn.com
 - DOMAIN-SUFFIX,steamos.cloud
+- DOMAIN-SUFFIX,steampeek.hu
 - DOMAIN-SUFFIX,steampowered.com
 - DOMAIN-SUFFIX,steamserver.net
 - DOMAIN-SUFFIX,steamstatic.com
@@ -23393,9 +23409,12 @@ payload:
 - DOMAIN-SUFFIX,tiktokglobalshopv.com
 - DOMAIN-SUFFIX,tiktokminis.us
 - DOMAIN-SUFFIX,tiktokrow-cdn.com
+- DOMAIN-SUFFIX,tiktokshop.com
+- DOMAIN-SUFFIX,tiktokstaticb.com
 - DOMAIN-SUFFIX,tiktokv.com
 - DOMAIN-SUFFIX,tiktokv.eu
 - DOMAIN-SUFFIX,tiktokv.us
+- DOMAIN-SUFFIX,tiktokvapp.com
 - DOMAIN-SUFFIX,tiktokw.eu
 - DOMAIN-SUFFIX,tiktokw.us
 - DOMAIN-SUFFIX,tilda.cc
@@ -23578,6 +23597,7 @@ payload:
 - DOMAIN-SUFFIX,torproject.org
 - DOMAIN-SUFFIX,torrentgalaxy.to
 - DOMAIN-SUFFIX,torrentkitty.tv
+- DOMAIN-SUFFIX,torrentleech.org
 - DOMAIN-SUFFIX,torrentprivacy.com
 - DOMAIN-SUFFIX,torrentproject.se
 - DOMAIN-SUFFIX,torrenty.org
@@ -24989,6 +25009,7 @@ payload:
 - DOMAIN-SUFFIX,vodafone.de
 - DOMAIN-SUFFIX,vodafone.it
 - DOMAIN-SUFFIX,vodafone.nl
+- DOMAIN-SUFFIX,vodafoneziggo.nl
 - DOMAIN-SUFFIX,voicettank.org
 - DOMAIN-SUFFIX,vokevr.com
 - DOMAIN-SUFFIX,vol.moe
@@ -25447,7 +25468,9 @@ payload:
 - DOMAIN-SUFFIX,webex.de
 - DOMAIN-SUFFIX,webex.es
 - DOMAIN-SUFFIX,webex.fr
+- DOMAIN-SUFFIX,webflow-ext.com
 - DOMAIN-SUFFIX,webflow.com
+- DOMAIN-SUFFIX,webflow.io
 - DOMAIN-SUFFIX,webgata.net
 - DOMAIN-SUFFIX,webgirlsonline.net
 - DOMAIN-SUFFIX,webhosting.com
@@ -25470,6 +25493,7 @@ payload:
 - DOMAIN-SUFFIX,webrtc.org
 - DOMAIN-SUFFIX,websdr.org
 - DOMAIN-SUFFIX,webshare.io
+- DOMAIN-SUFFIX,website-files.com
 - DOMAIN-SUFFIX,website.new
 - DOMAIN-SUFFIX,webtoons.com
 - DOMAIN-SUFFIX,webtoonscorp.com
@@ -27153,6 +27177,7 @@ payload:
 - DOMAIN-SUFFIX,youtubekids.com
 - DOMAIN-SUFFIX,youtubemobilesupport.com
 - DOMAIN-SUFFIX,youversion.com
+- DOMAIN-SUFFIX,youversionapi.com
 - DOMAIN-SUFFIX,youwin.com
 - DOMAIN-SUFFIX,youwuss.com
 - DOMAIN-SUFFIX,youx.xxx
@@ -27308,6 +27333,7 @@ payload:
 - DOMAIN-SUFFIX,zhuzhushipin-app.com
 - DOMAIN-SUFFIX,zi.media
 - DOMAIN-SUFFIX,zibacity.com
+- DOMAIN-SUFFIX,ziggo.nl
 - DOMAIN-SUFFIX,ziglang.org
 - DOMAIN-SUFFIX,zigzag.kr
 - DOMAIN-SUFFIX,zillionk.com
