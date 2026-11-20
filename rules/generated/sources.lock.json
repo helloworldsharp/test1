@@ -187,8 +187,8 @@
     },
     "openai_voice_ipv4": {
       "url": "https://openai.com/chatgpt-voice.json",
-      "sha256": "762df2f791e2353ecf941be0df883d152b0957d32991fc4cff4d1aed79be797b",
-      "rules": 540
+      "sha256": "0852b8be430cb4ae4a68ff8c0169f05bcdc5ce2ab6649cb3fc02d057a50612e7",
+      "rules": 411
     }
   },
   "outputs": {
@@ -303,13 +303,13 @@
       }
     },
     "ai_openai": {
-      "rules": 572,
-      "sha256": "22852c15a0325e2edfab122561ad65e66d5b5eb663069af598ed990202a14e26",
+      "rules": 443,
+      "sha256": "f1a7054baf6cdb133435e9a335fa6949a70f5abaae7de14c315116bc13cc5b67",
       "types": {
         "DOMAIN": 17,
         "DOMAIN-REGEX": 1,
         "DOMAIN-SUFFIX": 14,
-        "IP-CIDR": 540
+        "IP-CIDR": 411
       }
     },
     "ai_anthropic": {
